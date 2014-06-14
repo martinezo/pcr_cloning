@@ -1,0 +1,23 @@
+%h1 Listing admin_users
+
+%table
+  %tr
+    %th Login
+    %th Name
+    %th Mail
+    %th
+    %th
+    %th
+
+  - @admin_users.each do |admin_user|
+    %tr
+      %td= admin_user.login
+      %td= admin_user.name
+      %td= admin_user.mail
+      %td= link_to 'Show', admin_user, class: 'jq-button', 'jq-icon' => 'person'
+      %td= link_to 'Edit', edit_admin_user_path(admin_user), class: 'jq-button', 'jq-icon' => 'pencil'
+      %td= link_to 'Destroy', admin_user, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'jq-button', 'jq-icon' => 'trash'
+
+%br
+
+= link_to 'New User', new_admin_user_path

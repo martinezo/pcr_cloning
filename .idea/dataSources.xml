@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="1170474039">
+    <data-source source="LOCAL" name="Rails pcr_cloning: development" uuid="7742f397-955d-4e94-9577-78d0c6263fb2">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/pcr_cloning_development</jdbc-url>
+      <user-name>postgres</user-name>
+      <user-password>dfdadfc5dfd9dfdedf9edfc7dfcf</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails pcr_cloning: test" uuid="130c8d92-2173-47fb-8470-2573c0a236c0">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:pcr_cloning_test</jdbc-url>
+      <user-name>pcr_cloning</user-name>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails pcr_cloning: production" uuid="14cf397b-b397-4df6-8c96-7d457ed90f51">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:pcr_cloning_production</jdbc-url>
+      <user-name>pcr_cloning</user-name>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
