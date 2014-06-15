@@ -1,0 +1,11 @@
+es:
+  commands:
+    new: Agregar
+    show: Detalle
+    edit: Modificar
+    delete: Borrar
+    back: Regresar
+    close: Cerrar
+
+  titles:
+     users: Usuarios

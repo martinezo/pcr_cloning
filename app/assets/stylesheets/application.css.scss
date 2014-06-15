@@ -1,0 +1,87 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+@import "base";
+
+//Tables
+.tbl-users{
+  @include four-columns(9,9,3,3);
+}
+
+.error-explanation, .alert-notice, #delete-dialog {
+  .ui-state-error, .ui-state-highlight {
+    padding: 5px;
+  }
+  .icon{
+    float: left;
+  }
+  .message{
+    font-weight: bold;
+  }
+  ul{
+    list-style-type: disc;
+    padding-left: 2em;
+  }
+}
+
+.simple_form {
+  .input .string, .input .password, .input .select, .input .email {
+    display: block;
+    clear: both;
+  }
+  label{
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+}
+
+
+//MARGINS
+.tbl-users{
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+#tbl-menu{
+  @include three-columns(18,2,4)
+}
+
+//TODO move this to base.css
+.ui-menu{
+  z-index : 9999;
+}
+
+.ui-menu-item{
+  text-align: right;
+}
+
+
+
+a.sortable{
+  &:link, &:visited{
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 100;
+  }
+  &:hover {
+    background-color: $base-color-2;
+    font-weight: bolder;
+    color: $base-color-3;
+  }
+}
+
+//.ui-dialog-content{
+//  overflow: hidden;
+//}
