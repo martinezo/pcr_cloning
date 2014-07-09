@@ -1,0 +1,22 @@
+#tbl-menu
+  .col-1
+    &nbsp
+  .col-2
+    &nbsp
+  .col-3
+    %ul#admin-menu
+      %li
+        %a Catálogos
+        %ul
+          %li#options
+            - if controller_name == 'users'
+              =label_tag t('titles.users'), nil, class: 'ui-state-disabled'
+            - else
+              =link_to t('titles.users'), admin_users_path
+          -#%li
+            - if controller_name == 'elected_positions'
+              =label_tag t('titles.elected_positions'), nil, class: 'ui-state-disabled'
+            - else
+              =link_to t('titles.elected_positions'), catalogs_elected_positions_path
+          -#%li
+            =link_to t('cmds.log_out'), destroy_user_session_path, method: :delete
