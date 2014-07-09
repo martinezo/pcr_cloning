@@ -1,6 +1,7 @@
 PcrCloning::Application.routes.draw do
   namespace :admin do
     resources :users
+    get 'users/delete/:id' => 'users#delete', as: 'delete_user'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

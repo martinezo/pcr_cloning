@@ -1,5 +1,25 @@
 module ApplicationHelper
 
+  def sortable(column, title=nil, url)
+    title ||= column.titleize
+    direction = (column == sort_column && sort_direction == "asc") ? "desc" : "asc"
+    (column == sort_column && sort_direction == "asc") ? title << " \u25B2" : title << " \u25BC"
+    link_to title, "#{url}?direction=#{direction}&sort=#{column}" << (params[:search] ? "&search=#{params[:search]}" : ''), remote: true, class: 'sortable'
+  end
+
+  def link_to_jq_button(options)
+    url = options[:url]
+    text = options[:text] || '&nbsp'.html_safe
+    title = options[:title] || nil
+    remote = options[:remote] || true
+    data = options[:data] || nil
+    icon = options[:icon] || nil
+    id = options[:id] || nil
+    htm_class = 'jq-button' << (options[:htm_class] ? ",#{html_class}" : '')
+    link_to text, url, title: title, remote: remote, data: data, 'jq-icon'=> icon, id: id, class: htm_class
+  end
+
+
   def jq_submit_tag(title)
     submit_tag title, :'jq-text' => true, :class => 'jq-button'
   end

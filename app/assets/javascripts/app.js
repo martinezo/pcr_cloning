@@ -20,7 +20,7 @@ $(document).ready(function(){
     $(document).tooltip();
 });
 
-function remote_wil_paginate(){
+function remote_will_paginate(){
     $(".pagination a").attr('data-remote', 'true');
 }
 
@@ -51,7 +51,7 @@ function jqmenu(){
 
 function load_jquery_ui(){
     jqbuttons();
-    remote_wil_paginate();
+    remote_will_paginate();
     jqmenu();
 }
 

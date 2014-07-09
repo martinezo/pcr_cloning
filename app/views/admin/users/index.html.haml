@@ -1,31 +1,20 @@
+#menu
+  =render partial: 'layouts/admin_menu'
+
 %h1= t('titles.users')
 
-.tbl-users.t-head
-  .col-1
-    Nombre
-  .col-2
-    Correo
-  .col-3
-    Usuario
-  .col-4
-    &nbsp
+=render 'layouts/search', url: admin_users_path
 
-.tbl-users
-  - @admin_users.each do |admin_user|
-    .col-1
-      = admin_user.name
-    .col-2
-      = admin_user.mail
-    .col-3
-      = admin_user.login
-    .col-4
-      = jq_icon_link_to admin_user, 'person', t('commands.show')
-      = jq_icon_link_to edit_admin_user_path(admin_user), 'pencil', false
-      = jq_link_to_destroy admin_user,nil,'Estas seguro',false
+#record-list
+  =render partial: 'record_tbl'
 
+#will-paginate
+  = will_paginate @admin_users, params: {id: nil, action: 'index'}
 
 %br
 
-= jq_link_to new_admin_user_path, t('commands.new')
+= link_to_jq_button({url: new_admin_user_path, text: t('commands.new')})
 
 #show-dialog
+#new-update-dialog
+#delete-dialog

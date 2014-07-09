@@ -6,7 +6,7 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1:5432/pcr_cloning_development</jdbc-url>
       <user-name>postgres</user-name>
-      <user-password>dfc9dfc5dfc7dfdadfdfdfdedfc5</user-password>
+      <user-password>dfdadfc5dfd9dfdedf9edfc7dfcf</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails pcr_cloning: test" uuid="130c8d92-2173-47fb-8470-2573c0a236c0">

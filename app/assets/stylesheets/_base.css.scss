@@ -5,16 +5,17 @@
 $blueprint-container-size: 990px;
 $font-family: Arial,Helvetica;
 
-$base-color-1: #f6b95a;
-$base-color-2: #f2d85d;
-$base-color-3: #bf974c;
+$base-color-1: #FF8A00;
+$base-color-2: #FFD98F;
+$base-color-3: #803000;
+$base-color-4: #382500;
 
 html{
   overflow-y: auto;
 }
 
 body {
-  background: asset-url("evote_header_bg.jpg", image) repeat-x top #ffffff;
+  background: asset-url("header_bg.jpg", image) repeat-x top #ffffff;
   font-family: $font-family;
 }
 
@@ -26,7 +27,7 @@ body {
 
 #header {
   @include column(25);
-  background: asset-url("header.jpeg", image) no-repeat white;
+  background: asset-url("header.jpg", image) no-repeat white;
   height: 220px;
 }
 
@@ -39,8 +40,8 @@ body {
 
 #footer {
   clear: both;
-  background-color: $base-color-1;
-  color: $base-color-3;
+  background-color: $base-color-4;
+  color: $base-color-2;
   line-height: 20px;
   text-align: center;
   font-size: 10px;
@@ -69,11 +70,11 @@ strong{
 }
 
 .alt-0{
-    background-color: lighten($base-color-3, 40%);
+    background-color: lighten($base-color-2, 18%);
 }
 
 .alt-1{
-  background-color: lighten($base-color-3, 30%);
+  background-color: lighten($base-color-2, 12%);
 }
 
 .sp{
@@ -94,10 +95,11 @@ strong{
 .t-head{
   font-size: 13px;
   font-weight: bold;
-  color: $base-color-2;
-  background-color: darken($base-color-3, 2%);
+  padding: 4px 0px;
+  background-color: lighten($base-color-1, 15%);
   div{
-    background-color: darken($base-color-3, 20%);
+    background-color: $base-color-1;
+    padding: 2px 0px;
     }
 }
 

@@ -1,15 +1,13 @@
-%p#notice= notice
+.alert-notice
+  =render partial: 'layouts/alert_notice'
 
-%p
-  %b Login:
-  = @admin_user.login
-%p
-  %b Name:
-  = @admin_user.name
-%p
-  %b Mail:
-  = @admin_user.mail
+= show_for @admin_user do |r|
+  = r.attribute :login
+  = r.attribute :name
+  = r.attribute :mail
+.sp
+%hr
 
-= jq_link_to edit_admin_user_path(@admin_user),t('commands.edit'),'pencil'
-= jq_link_to admin_users_path, t('commands.close')
-
+.t-right
+  = jq_link_to edit_admin_user_path(@admin_user),t('commands.edit'),'pencil'
+  = jq_link_to admin_users_path, t('commands.close')
