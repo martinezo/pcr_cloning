@@ -1,4 +1,5 @@
 PcrCloning::Application.routes.draw do
+  devise_for :devise_users
   namespace :admin do
     resources :users
     get 'users/delete/:id' => 'users#delete', as: 'delete_user'

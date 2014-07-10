@@ -20,6 +20,11 @@
   @include two-columns(7,5);
 }
 
+.tbl-sign-in{
+  @include prepend(6);
+  @include column(12);
+}
+
 .tbl-users{
   @include four-columns(9,9,3,3);
 }

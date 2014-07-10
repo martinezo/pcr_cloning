@@ -9,9 +9,13 @@ es:
     save: Guardar
     search: Buscar
     list_all: Mostrar todos
+    sign_in: Acceder
+    sign_out: Cerrar Sessión
 
   titles:
+    sign_in: Inicio de sessión como administrador
     users: Usuarios
+
 
   notices:
     saved_successfully: Registro guardado correctamente. 
@@ -27,6 +31,10 @@ es:
         login: Usuario
         name: Nombre
         mail: Correo
+
+      devise_user:
+        login: Usuario
+        password: Contraseña
  
     errors:
       models:

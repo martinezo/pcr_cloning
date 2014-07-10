@@ -18,5 +18,5 @@
               =label_tag t('titles.elected_positions'), nil, class: 'ui-state-disabled'
             - else
               =link_to t('titles.elected_positions'), catalogs_elected_positions_path
-          -#%li
-            =link_to t('cmds.log_out'), destroy_user_session_path, method: :delete
+          %li
+            =link_to t('commands.sign_out'), destroy_devise_user_session_path, method: :delete
