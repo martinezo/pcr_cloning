@@ -15,6 +15,7 @@ es:
   titles:
     sign_in: Inicio de sessión como administrador
     users: Usuarios
+    system_config: Configuración del sistema
 
 
   notices:

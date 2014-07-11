@@ -1,0 +1,6 @@
+---
+prices:
+  internal: 200
+  external: 300
+notifications:
+  new_request_mails: rmartinez1006@prodigy.net.mx, martinezo@inb,unam.mx

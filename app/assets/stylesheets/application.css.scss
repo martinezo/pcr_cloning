@@ -64,28 +64,21 @@
 }
 
 #tbl-menu{
-  @include three-columns(18,2,4)
+  @include two-columns(19,5);
 }
 
 //TODO move this to base.css
 .ui-menu{
   border-radius: 4px;
   border: solid #ffffff 1px;
+  width: 190px;
   z-index : 9999;
 }
-
-//.ui-menu-item{
-//  z-index : 9999;
-//  text-align: right;
-//  border-radius: 4px;
-//  border: solid #ffffff 2px;
-//}
 
 a.sortable{
   &:link, &:visited{
     text-decoration: none;
     color: $base-color-4;
-//    font-weight: bolder;
   }
   &:hover {
     background-color: $base-color-1;

@@ -1,0 +1,23 @@
+#menu
+  =render partial: 'layouts/admin_menu'
+
+%h1= t('titles.system_config')
+
+= form_tag admin_system_config_update_path, method: 'post' do
+  .tbl-system-config
+    .col-1
+      -#TODO Traducir etiquetas
+      Precio al público
+    .col-2
+      = text_field_tag :internal_price, Admin::SystemConfig.internal_price
+    .col-1
+      Precio interno 
+    .col-2
+      = text_field_tag :external_price, Admin::SystemConfig.external_price
+    .col-1
+      Correos para notificar nuevas solicitudes
+    .col-2
+      = text_field_tag :new_request_mails, Admin::SystemConfig.new_request_mails
+  .sp   
+  = jq_submit_tag t('commands.save') 
+  
