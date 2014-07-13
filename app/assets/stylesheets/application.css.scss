@@ -29,6 +29,11 @@
   @include four-columns(9,9,3,3);
 }
 
+
+.tbl-system-config{
+  @include two-columns(8,16);
+}
+
 .error-explanation, .alert-notice, #delete-dialog {
   .ui-state-error, .ui-state-highlight {
     padding: 5px;
