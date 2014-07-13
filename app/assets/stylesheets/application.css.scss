@@ -32,6 +32,9 @@
 
 .tbl-system-config{
   @include two-columns(8,16);
+  .col-1{
+    background: $base-color-2;
+  }
 }
 
 .error-explanation, .alert-notice, #delete-dialog {
