@@ -1,0 +1,60 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @requests_cloning.name
+%p
+  %b Company:
+  = @requests_cloning.company
+%p
+  %b Mail:
+  = @requests_cloning.mail
+%p
+  %b Phone:
+  = @requests_cloning.phone
+%p
+  %b Shipping address:
+  = @requests_cloning.shipping_address
+%p
+  %b Group leader:
+  = @requests_cloning.group_leader
+%p
+  %b Payment method:
+  = @requests_cloning.payment_method
+%p
+  %b Sample name:
+  = @requests_cloning.sample_name
+%p
+  %b Sample volume:
+  = @requests_cloning.sample_volume
+%p
+  %b Pcr product size:
+  = @requests_cloning.pcr_product_size
+%p
+  %b Type:
+  = @requests_cloning.type
+%p
+  %b Sequencing type:
+  = @requests_cloning.sequencing_type
+%p
+  %b Inv name:
+  = @requests_cloning.inv_name
+%p
+  %b Inv rfc:
+  = @requests_cloning.inv_rfc
+%p
+  %b Inv address:
+  = @requests_cloning.inv_address
+%p
+  %b Inv city:
+  = @requests_cloning.inv_city
+%p
+  %b Inv municipality:
+  = @requests_cloning.inv_municipality
+%p
+  %b Inv mail:
+  = @requests_cloning.inv_mail
+
+= link_to 'Edit', edit_requests_cloning_path(@requests_cloning)
+\|
+= link_to 'Back', requests_clonings_path

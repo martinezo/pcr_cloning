@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  company: MyString
+  mail: MyString
+  phone: MyString
+  shipping_address: MyString
+  group_leader: MyString
+  payment_method: 1
+  sample_name: MyString
+  sample_volume: MyString
+  pcr_product_size: MyString
+  type: 
+  sequencing_type: MyString
+  inv_name: MyString
+  inv_rfc: MyString
+  inv_address: MyString
+  inv_city: MyString
+  inv_municipality: MyString
+  inv_mail: MyString
+
+two:
+  name: MyString
+  company: MyString
+  mail: MyString
+  phone: MyString
+  shipping_address: MyString
+  group_leader: MyString
+  payment_method: 1
+  sample_name: MyString
+  sample_volume: MyString
+  pcr_product_size: MyString
+  type: 
+  sequencing_type: MyString
+  inv_name: MyString
+  inv_rfc: MyString
+  inv_address: MyString
+  inv_city: MyString
+  inv_municipality: MyString
+  inv_mail: MyString

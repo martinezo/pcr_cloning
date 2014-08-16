@@ -1,5 +1,9 @@
 PcrCloning::Application.routes.draw do
 
+  namespace :requests do
+    resources :clonings
+  end
+
   devise_for :devise_users
   namespace :admin do
     resources :users
