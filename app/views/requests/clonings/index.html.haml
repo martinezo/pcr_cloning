@@ -1,53 +1,25 @@
-%h1 Listing requests_clonings
+#menu
+  =render partial: 'layouts/admin_menu'
 
-%table
-  %tr
-    %th Name
-    %th Company
-    %th Mail
-    %th Phone
-    %th Shipping address
-    %th Group leader
-    %th Payment method
-    %th Sample name
-    %th Sample volume
-    %th Pcr product size
-    %th Type
-    %th Sequencing type
-    %th Inv name
-    %th Inv rfc
-    %th Inv address
-    %th Inv city
-    %th Inv municipality
-    %th Inv mail
-    %th
-    %th
-    %th
+%h1= t('titles.requests_clonings')
 
-  - @requests_clonings.each do |requests_cloning|
-    %tr
-      %td= requests_cloning.name
-      %td= requests_cloning.company
-      %td= requests_cloning.mail
-      %td= requests_cloning.phone
-      %td= requests_cloning.shipping_address
-      %td= requests_cloning.group_leader
-      %td= requests_cloning.payment_method
-      %td= requests_cloning.sample_name
-      %td= requests_cloning.sample_volume
-      %td= requests_cloning.pcr_product_size
-      %td= requests_cloning.type
-      %td= requests_cloning.sequencing_type
-      %td= requests_cloning.inv_name
-      %td= requests_cloning.inv_rfc
-      %td= requests_cloning.inv_address
-      %td= requests_cloning.inv_city
-      %td= requests_cloning.inv_municipality
-      %td= requests_cloning.inv_mail
-      %td= link_to 'Show', requests_cloning
-      %td= link_to 'Edit', edit_requests_cloning_path(requests_cloning)
-      %td= link_to 'Destroy', requests_cloning, :method => :delete, :data => { :confirm => 'Are you sure?' }
+.alert-notice
+  =render partial: 'layouts/alert_notice'
+
+=render 'layouts/search', url: requests_clonings_path
 
 %br
 
-= link_to 'New Cloning', new_requests_cloning_path
+#record-list
+  =render partial: 'record_tbl'
+
+%br
+
+= link_to_jq_button({url: new_requests_cloning_path, text: t('commands.new'), icon: 'plus'})
+
+-#TODO translate title
+#new-dialog{title: t('titles.new_request_cloning')}
+#delete-dialog
+
+
+-#= link_to 'New Cloning', new_requests_cloning_path

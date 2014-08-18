@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1170474039">
+  <component name="DataSourceManagerImpl" format="xml" hash="2544085844">
     <data-source source="LOCAL" name="Rails pcr_cloning: development" uuid="7742f397-955d-4e94-9577-78d0c6263fb2">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1:5432/pcr_cloning_development</jdbc-url>
       <user-name>postgres</user-name>
-      <user-password>dfdadfc5dfd9dfdedf9edfc7dfcf</user-password>
+      <user-password>dfc9df9adfc7dfdadfdfdfdedf9a</user-password>
+      <schema-pattern>pcr_cloning_development.*</schema-pattern>
+      <default-schemas>pcr_cloning_development.pg_catalog pcr_cloning_development.public</default-schemas>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails pcr_cloning: test" uuid="130c8d92-2173-47fb-8470-2573c0a236c0">
