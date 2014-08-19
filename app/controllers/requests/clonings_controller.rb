@@ -1,10 +1,13 @@
 class Requests::CloningsController < ApplicationController
   before_action :set_requests_cloning, only: [:show, :edit, :update, :destroy]
 
+  helper_method :sort_column, :sort_direction
+
   # GET /requests/clonings
   # GET /requests/clonings.json
   def index
-    @requests_clonings = Requests::Cloning.all
+    #@requests_clonings = Requests::Cloning.all
+    @requests_clonings = Requests::Cloning.search(params[:search]).order("#{sort_column} #{sort_direction}").paginate(per_page: 15, page:  params[:page])
   end
 
   # GET /requests/clonings/1
@@ -26,29 +29,40 @@ class Requests::CloningsController < ApplicationController
   def create
     @requests_cloning = Requests::Cloning.new(requests_cloning_params)
 
-    respond_to do |format|
-      if @requests_cloning.save
-        format.html { redirect_to @requests_cloning, notice: 'Cloning was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @requests_cloning }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @requests_cloning.errors, status: :unprocessable_entity }
-      end
+    if @requests_cloning.save
+      flash[:notice] = t('notices.saved_successfully')
+      render :js => "window.location = '#{edit_requests_cloning_path(@requests_cloning)}'"
+    else
+      @errors = @requests_cloning.errors
     end
+
   end
 
   # PATCH/PUT /requests/clonings/1
   # PATCH/PUT /requests/clonings/1.json
   def update
+#    @requests_cloning = Requests::Cloning.find(params[:id])
     respond_to do |format|
       if @requests_cloning.update(requests_cloning_params)
-        format.html { redirect_to @requests_cloning, notice: 'Cloning was successfully updated.' }
+        format.html { redirect_to @requests_cloning, notice: t('notices.updated_successfully') }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
         format.json { render json: @requests_cloning.errors, status: :unprocessable_entity }
       end
     end
+
+
+
+    #respond_to do |format|
+    #  if @requests_cloning.update(requests_cloning_params)
+    #    format.html { redirect_to @requests_cloning, notice: 'Cloning was successfully updated.' }
+    #    format.json { head :no_content }
+    #  else
+    #    format.html { render action: 'edit' }
+    #    format.json { render json: @requests_cloning.errors, status: :unprocessable_entity }
+    #  end
+    #end
   end
 
   # DELETE /requests/clonings/1
@@ -71,4 +85,13 @@ class Requests::CloningsController < ApplicationController
     def requests_cloning_params
       params.require(:requests_cloning).permit(:name, :company, :mail, :phone, :shipping_address, :group_leader, :payment_method, :sample_name, :sample_volume, :pcr_product_size, :type, :sequencing_type, :inv_name, :inv_rfc, :inv_address, :inv_city, :inv_municipality, :inv_mail)
     end
+
+  def sort_column
+    params[:sort] || 'created_at'
+  end
+
+  def sort_direction
+    params[:direction] || 'asc'
+  end
+
 end

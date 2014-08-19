@@ -16,6 +16,6 @@ config/database.yml
 config/ldap.yml
 
 # idea
-/.idea
+.idea/
 Gemfile.lock
 

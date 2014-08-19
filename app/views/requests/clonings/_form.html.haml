@@ -1,64 +1,91 @@
-= form_for @requests_cloning do |f|
-  - if @requests_cloning.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@requests_cloning.errors.count, "error")} prohibited this requests_cloning from being saved:"
-      %ul
-        - @requests_cloning.errors.full_messages.each do |msg|
-          %li= msg
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :company
-    = f.text_field :company
-  .field
-    = f.label :mail
-    = f.text_field :mail
-  .field
-    = f.label :phone
-    = f.text_field :phone
-  .field
-    = f.label :shipping_address
-    = f.text_field :shipping_address
-  .field
-    = f.label :group_leader
-    = f.text_field :group_leader
-  .field
-    = f.label :payment_method
-    = f.number_field :payment_method
-  .field
-    = f.label :sample_name
-    = f.text_field :sample_name
-  .field
-    = f.label :sample_volume
-    = f.text_field :sample_volume
-  .field
-    = f.label :pcr_product_size
-    = f.text_field :pcr_product_size
-  .field
-    = f.label :type
-    = f.text_field :type
-  .field
-    = f.label :sequencing_type
-    = f.text_field :sequencing_type
-  .field
-    = f.label :inv_name
-    = f.text_field :inv_name
-  .field
-    = f.label :inv_rfc
-    = f.text_field :inv_rfc
-  .field
-    = f.label :inv_address
-    = f.text_field :inv_address
-  .field
-    = f.label :inv_city
-    = f.text_field :inv_city
-  .field
-    = f.label :inv_municipality
-    = f.text_field :inv_municipality
-  .field
-    = f.label :inv_mail
-    = f.text_field :inv_mail
-  .actions
-    = f.submit 'Save'
+= simple_form_for @requests_cloning, :html => {:novalidate => true, multipart: true} do |f|
+
+  .t-right
+    =jq_submit_tag t('commands.save')
+    = link_to_jq_button({url: requests_clonings_path, text: t('commands.cancel'), icon: 'close', remote: false})
+  .sp
+
+  %h3.t-head= t('titles.user_data')
+  .tbl-clonings-attr
+    .col-1
+      =f.label :name
+    .col-2
+      =f.input_field :name, :size => 50
+    .col-1
+      =f.label :company
+    .col-2
+      =f.input_field :company, :size => 60
+    .col-1
+      =f.label :mail
+    .col-2
+      =f.input_field :mail, :size => 60
+    .col-1
+      =f.label :phone
+    .col-2
+      =f.input_field :phone, :size => 60
+    .col-1
+      =f.label :shipping_address
+    .col-2
+      =f.input_field :shipping_address, :size => 60
+
+  %h3.t-head= t('titles.sample_data')
+  .tbl-clonings-attr
+    .col-1
+      =f.label :sample_name
+    .col-2
+      =f.input_field :sample_name, :size => 60
+    .col-1
+      =f.label :sample_volume
+    .col-2
+      =f.input_field :sample_volume, :size => 60
+    .col-1
+      =f.label :pcr_product_size
+    .col-2
+      =f.input_field :pcr_product_size, :size => 60
+    .col-1
+      =f.label :group_leader
+    .col-2
+      =f.input_field :group_leader, :size => 60
+    .col-1
+      =f.label :payment_method
+    .col-2
+      =f.input_field :payment_method, :size => 60
+    .col-1
+      =f.label :type
+    .col-2
+      =f.input_field :type, :size => 60
+    .col-1
+      =f.label :sequencing_type
+    .col-2
+      =f.input_field :sequencing_type, :size => 60
+  %h3.t-head= t('titles.invoice_data')
+  .tbl-clonings-attr
+    .col-1
+      =f.label :inv_name
+    .col-2
+      =f.input_field :inv_name, :size => 60
+    .col-1
+      =f.label :inv_rfc
+    .col-2
+      =f.input_field :inv_rfc, :size => 60
+    .col-1
+      =f.label :inv_address
+    .col-2
+      =f.input_field :inv_address, :size => 60
+    .col-1
+      =f.label :inv_municipality
+    .col-2
+      =f.input_field :inv_municipality, :size => 60
+    .col-1
+      =f.label :inv_state_id
+    .col-2
+      =f.input_field :inv_state_id
+    .col-1
+      =f.label :inv_mail
+    .col-2
+      =f.input_field :inv_mail, :size => 60
+
+
+
+

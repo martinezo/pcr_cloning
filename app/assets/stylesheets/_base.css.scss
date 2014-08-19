@@ -40,24 +40,26 @@ body {
 
 #footer {
   clear: both;
-  background-color: $base-color-4;
-  color: $base-color-2;
-  line-height: 20px;
+  color: $base-color-3;
+  line-height: 25px;
   text-align: center;
   font-size: 10px;
-  padding-top: 3px;
-  }
+  padding-top: 2px;
+  background: asset-url("footer.jpg", image) repeat-x top #ffffff;
+}
 
 h1{
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
+  color: $base-color-1;
 }
 
 h2{
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 10px;
+  color: $base-color-2;
 }
 
 h3{
@@ -70,11 +72,11 @@ strong{
 }
 
 .alt-0{
-    background-color: lighten($base-color-2, 18%);
+  background-color: lighten($base-color-3, 20%);
 }
 
 .alt-1{
-  background-color: lighten($base-color-2, 12%);
+  background-color: lighten($base-color-3, 12%);
 }
 
 .sp{
@@ -100,8 +102,9 @@ strong{
   div{
     background-color: $base-color-1;
     padding: 2px 0px;
-    }
+  }
 }
+
 
 .t-cent{
   text-align: center;
@@ -117,20 +120,20 @@ strong{
 
 @mixin two-columns($c1, $c2){
   @include t-base;
-  .col-1{ @include column($c1); }
+  .col-1{ @include column($c1); clear: left;}
   .col-2{ @include column($c2); @include last; }
 }
 
 @mixin three-columns($c1, $c2, $c3){
   @include t-base;
-  .col-1{ @include column($c1); }
+  .col-1{ @include column($c1); clear: left; margin-buttom: 4px; }
   .col-2{ @include column($c2); }
   .col-3{ @include column($c3); @include last; }
 }
 
 @mixin four-columns($c1, $c2, $c3, $c4){
   @include t-base;
-  .col-1{ @include column($c1); }
+  .col-1{ @include column($c1); clear: left; margin-buttom: 4px; }
   .col-2{ @include column($c2); }
   .col-3{ @include column($c3); }
   .col-4{ @include column($c4); @include last; }
@@ -138,7 +141,7 @@ strong{
 
 @mixin five-columns($c1, $c2, $c3, $c4, $c5){
   @include t-base;
-  .col-1{ @include column($c1); }
+  .col-1{ @include column($c1); clear: left; margin-buttom: 4px; }
   .col-2{ @include column($c2); }
   .col-3{ @include column($c3); }
   .col-4{ @include column($c4); }
@@ -147,7 +150,7 @@ strong{
 
 @mixin six-columns($c1, $c2, $c3, $c4, $c5, $c6){
   @include t-base;
-  .col-1{ @include column($c1); }
+  .col-1{ @include column($c1); clear: left; margin-buttom: 4px; }
   .col-2{ @include column($c2); }
   .col-3{ @include column($c3); }
   .col-4{ @include column($c4); }
@@ -157,7 +160,7 @@ strong{
 
 @mixin seven-columns($c1, $c2, $c3, $c4, $c5, $c6, $c7){
   @include t-base;
-  .col-1{ @include column($c1); }
+  .col-1{ @include column($c1); clear: left; margin-buttom: 4px; }
   .col-2{ @include column($c2); }
   .col-3{ @include column($c3); }
   .col-4{ @include column($c4); }
@@ -168,7 +171,7 @@ strong{
 
 @mixin eight-columns($c1, $c2, $c3, $c4, $c5, $c6, $c7, $c8){
   @include t-base;
-  .col-1{ @include column($c1); }
+  .col-1{ @include column($c1); clear: left; margin-buttom: 4px; }
   .col-2{ @include column($c2); }
   .col-3{ @include column($c3); }
   .col-4{ @include column($c4); }
@@ -193,7 +196,7 @@ strong{
 }
 
 .jq-button{
-  font-size: 0.9em !important;
+  font-size: 11px !important;
   font-weight: 500 !important;
 }
 
@@ -204,7 +207,8 @@ strong{
   margin: 10px 0px 10px 0px;
   background: lighten($base-color-3, 30%);
   text-align:center;
-  padding:1em;
+  //  padding:1em;
+  font-size: 12px;
   cursor:default;
   a, span {
     padding: 0.2em 0.3em;
@@ -223,6 +227,7 @@ strong{
     -moz-border-radius: 1em;
     -webkit-border-radius: 1em;
     border-radius:1em;
+    padding-top: 0.5em;
   }
   a{
     text-decoration:none;
@@ -230,7 +235,7 @@ strong{
     &:hover, &:focus{
       font-weight: bold;
       background-color: $base-color-2;
-      text-decoration:underline
+      text-decoration: none;
     }
   }
 }

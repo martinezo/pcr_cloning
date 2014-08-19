@@ -1,7 +1,6 @@
-%h1 Editing requests_cloning
+%h1= t('titles.edit', param: t('titles.cloning') )
 
 = render 'form'
 
-= link_to 'Show', @requests_cloning
-\|
-= link_to 'Back', requests_clonings_path
+
+-#= render 'form', url: @requests_cloning, url_cancel: requests_clonings_path

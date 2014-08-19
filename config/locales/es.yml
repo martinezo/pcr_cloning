@@ -11,11 +11,34 @@ es:
     list_all: Mostrar todos
     sign_in: Acceder
     sign_out: Cerrar Sessión
+    select_file: Selecciona un archivo...
+    preview: Vista Previa
+    cancel: Cancelar
+    download: Descargar %{param}
+    registration: Registro
+    send: Enviar
+    finish: Terminar
+
+
+
 
   titles:
     sign_in: Inicio de sessión como administrador
     users: Usuarios
+    requests_clonings: Solicitudes de Clonación de Productos de PCR
     system_config: Configuración del sistema
+    user_data: Datos de usuario
+    sample_data: Datos de la muestra
+    invoice_data: Datos para factura
+    name: Nombre de solic.
+    company: Empresa/Institución
+    sample_name: Nombre de la muestra
+    new_request_cloning: Nueva solicitud
+    cloning: Solicitud
+    edit: Modificar %{param}
+    delete: Borrar (%{param})
+    new: Nuevo %{param}
+
 
 
   notices:
@@ -36,6 +59,30 @@ es:
       devise_user:
         login: Usuario
         password: Contraseña
+
+      requests/cloning:
+        name: Nombre de solicitante
+        company: Empresa/Institución
+        mail: Correo electrónico
+        phone: Teléfono(s)
+        shipping_address: Dirección de envío
+        group_leader: Jefe Inmediato/Jefe de Grupo
+        payment_method: Forma de pago
+        sample_name: Nombre de la muestra
+        sample_volume: Volumen de la muestra
+        pcr_product_size: Tamaño del producto de PCR
+        type: Clonación sencilla o  Clonación y Secuenciación
+        sequencing_type: Tipo de secuenciación
+        inv_name: Razón social
+        inv_rfc: R.F.C.
+        inv_address: Dirección Fiscal
+        inv_municipality: Municipio
+        inv_state_id: Estado
+        inv_mail: Correo para envío de factura
+
+
+
+
  
     errors:
       models:

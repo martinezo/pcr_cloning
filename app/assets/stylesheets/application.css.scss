@@ -67,6 +67,28 @@
 }
 
 
+a.sortable{
+  &:link, &:visited{
+    text-decoration: none;
+    color: $base-color-3;
+  }
+  &:hover {
+    background-color: $base-color-4;
+    font-weight: bolder;
+    color: $base-color-2;
+  }
+}
+
+
+.tbl-clonings{
+  @include four-columns(7,7,7,3);
+}
+
+.tbl-clonings.t-head{
+  margin-top: 1em;
+}
+
+
 //MARGINS
 .tbl-users.t-head{
   margin-top: 1em;

@@ -1,60 +1,94 @@
-%p#notice= notice
+%h1= t('titles.cloning')
 
-%p
-  %b Name:
-  = @requests_cloning.name
-%p
-  %b Company:
-  = @requests_cloning.company
-%p
-  %b Mail:
-  = @requests_cloning.mail
-%p
-  %b Phone:
-  = @requests_cloning.phone
-%p
-  %b Shipping address:
-  = @requests_cloning.shipping_address
-%p
-  %b Group leader:
-  = @requests_cloning.group_leader
-%p
-  %b Payment method:
-  = @requests_cloning.payment_method
-%p
-  %b Sample name:
-  = @requests_cloning.sample_name
-%p
-  %b Sample volume:
-  = @requests_cloning.sample_volume
-%p
-  %b Pcr product size:
-  = @requests_cloning.pcr_product_size
-%p
-  %b Type:
-  = @requests_cloning.type
-%p
-  %b Sequencing type:
-  = @requests_cloning.sequencing_type
-%p
-  %b Inv name:
-  = @requests_cloning.inv_name
-%p
-  %b Inv rfc:
-  = @requests_cloning.inv_rfc
-%p
-  %b Inv address:
-  = @requests_cloning.inv_address
-%p
-  %b Inv city:
-  = @requests_cloning.inv_city
-%p
-  %b Inv municipality:
-  = @requests_cloning.inv_municipality
-%p
-  %b Inv mail:
-  = @requests_cloning.inv_mail
+.t-right
+  = link_to_jq_button({url: edit_requests_cloning_path(@requests_cloning), text: t('commands.edit'), title: t('commands.edit'), icon: 'pencil', remote: false})
+  = link_to_jq_button({url: requests_clonings_path, text: t('commands.close'), icon: 'close', remote: false})
+.sp
 
-= link_to 'Edit', edit_requests_cloning_path(@requests_cloning)
-\|
-= link_to 'Back', requests_clonings_path
+.alert-notice
+  =render partial: 'layouts/alert_notice'
+
+= show_for @requests_cloning do |r|
+
+  %h3.t-head= t('titles.user_data')
+  .tbl-clonings-attr
+    .col-1
+      = r.label :name
+    .col-2
+      = r.value :name
+    .col-1
+      = r.label :company
+    .col-2
+      = r.value :company
+    .col-1
+      = r.label :mail
+    .col-2
+      = r.value :mail
+    .col-1
+      = r.label :phone
+    .col-2
+      = r.value :phone
+    .col-1
+      = r.label :shipping_address
+    .col-2
+      = r.value :shipping_address
+  %h3.t-head= t('titles.sample_data')
+  .tbl-clonings-attr
+    .col-1
+      = r.label :group_leader
+    .col-2
+      = r.value :group_leader
+    .col-1
+      = r.label :payment_method
+    .col-2
+      = r.value :payment_method
+    .col-1
+      = r.label :sample_name
+    .col-2
+      = r.value :sample_name
+    .col-1
+      = r.label :sample_volume
+    .col-2
+      = r.value :sample_volume
+    .col-1
+      = r.label :pcr_product_size
+    .col-2
+      = r.value :pcr_product_size
+    .col-1
+      = r.label :type
+    .col-2
+      = r.value :type
+    .col-1
+      = r.label :sequencing_type
+    .col-2
+      = r.value :sequencing_type
+  %h3.t-head= t('titles.invoice_data')
+  .tbl-clonings-attr
+    .col-1
+      = r.label :inv_name
+    .col-2
+      = r.value :inv_name
+    .col-1
+      = r.label :inv_rfc
+    .col-2
+      = r.value :inv_rfc
+    .col-1
+      = r.label :inv_address
+    .col-2
+      = r.value :inv_address
+    .col-1
+      = r.label :inv_municipality
+    .col-2
+      = r.value :inv_municipality
+    .col-1
+      = r.label :inv_state_id
+    .col-2
+      = r.value :inv_state_id
+    .col-1
+      = r.label :inv_mail
+    .col-2
+      = r.value :inv_mail
+
+-#= link_to 'Edit', edit_requests_cloning_path(@requests_cloning)
+-#\|
+-#= link_to 'Back', requests_clonings_path
