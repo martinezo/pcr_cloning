@@ -27,7 +27,7 @@
 }
 
 .tbl-users{
-  @include four-columns(9,9,3,3);
+  @include four-columns(9,8,3,4);
 }
 
 
@@ -38,21 +38,6 @@
   }
 }
 
-.error-explanation, .alert-notice, #delete-dialog {
-  .ui-state-error, .ui-state-highlight {
-    padding: 5px;
-  }
-  .icon{
-    float: left;
-  }
-  .message{
-    font-weight: bold;
-  }
-  ul{
-    list-style-type: disc;
-    padding-left: 2em;
-  }
-}
 
 .simple_form {
   .input .string, .input .password, .input .select, .input .email {
@@ -98,54 +83,4 @@ a.sortable{
   @include two-columns(19,5);
 }
 
-//TODO move this to base.css
-.ui-menu{
-  border-radius: 4px;
-  border: solid #ffffff 1px;
-  width: 190px;
-  z-index : 9999;
-}
 
-a.sortable{
-  &:link, &:visited{
-    text-decoration: none;
-    color: $base-color-4;
-  }
-  &:hover {
-    background-color: $base-color-1;
-    font-weight: bolder;
-    color: $base-color-3;
-  }
-}
-
-.show_for {
-  .wrapper {
-    margin-bottom: 5px;
-    text-indent: -5px;
-    .label {
-      font-size: 14px;
-      color: $base-color-4;
-    }
-  }
-}
-
-.error-explanation, .alert-notice, #delete-dialog {
-  font-size: 12px;
-  .ui-state-error, .ui-state-highlight {
-    padding: 5px;
-  }
-  .icon{
-    float: left;
-  }
-  .message{
-    font-weight: bold;
-  }
-  ul{
-    list-style-type: disc;
-    padding-left: 2em;
-  }
-}
-
-//.ui-dialog-content{
-//  overflow: hidden;
-//}

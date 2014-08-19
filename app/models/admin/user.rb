@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class Admin::User < ActiveRecord::Base
   validates_uniqueness_of :login
   validates_presence_of :login, :name, :mail
