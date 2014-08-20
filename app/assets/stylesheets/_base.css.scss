@@ -74,11 +74,11 @@ strong{
 }
 
 .alt-0{
-  background-color: lighten($base-color-3, 20%);
+  background-color: lighten($base-color-2, 20%);
 }
 
 .alt-1{
-  background-color: lighten($base-color-3, 12%);
+  background-color: lighten($base-color-2, 12%);
 }
 
 .sp{
@@ -302,4 +302,17 @@ a.sortable{
       text-decoration: none;
     }
   }
+}
+
+// AWESOME FONT
+
+.fa-btn{
+  display: inline-block;
+  color: #333;
+  background-color: #FFF;
+  border-color: #CCC;
+  border-radius: 6px;
+  padding: 5px 8px;
+  text-align: center;
+  vertical-align: middle;
 }
