@@ -1,6 +1,6 @@
 class Requests::CloningsController < ApplicationController
-  before_action :set_requests_cloning, only: [:show, :edit, :update, :destroy]
 
+  before_action :set_requests_cloning, only: [:show, :edit, :update, :destroy, :delete]
   helper_method :sort_column, :sort_direction
 
   # GET /requests/clonings
@@ -65,14 +65,16 @@ class Requests::CloningsController < ApplicationController
     #end
   end
 
+
+  def delete
+
+  end
+
   # DELETE /requests/clonings/1
   # DELETE /requests/clonings/1.json
   def destroy
     @requests_cloning.destroy
-    respond_to do |format|
-      format.html { redirect_to requests_clonings_url }
-      format.json { head :no_content }
-    end
+    index
   end
 
   private

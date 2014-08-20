@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 class Requests::Cloning < ActiveRecord::Base
-
+  validates :name, :sample_name, presence: true
 
   def self.search(search)
     if search
