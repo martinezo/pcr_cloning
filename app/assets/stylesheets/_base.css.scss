@@ -306,13 +306,36 @@ a.sortable{
 
 // AWESOME FONT
 
+//.fa-btn{
+//  display: inline-block;
+//  color: #333;
+//  background-color: lavender;
+//  border: 1px solid grey;
+//  border-radius: 6px;
+//  padding: 5px 8px;
+//  text-align: left;
+//  vertical-align: middle;
+//}
+
 .fa-btn{
-  display: inline-block;
-  color: #333;
-  background-color: #FFF;
-  border-color: #CCC;
+  padding: 7px 8px 6px 5px;
   border-radius: 6px;
-  padding: 5px 8px;
-  text-align: center;
+  text-decoration: none;
+  text-align: left;
   vertical-align: middle;
+  background: asset-url('shade_01.png', image) repeat top $base-color-2;
+  color: $base-color-3;
+  &:hover, &:focus{
+    background-color: #ffffff;
+    border-color: $base-color-3;
+  }
+  span{
+    font-family: $font-family;
+    font-size: 1em;
+  }
+}
+
+input.fa-btn{
+  font-family: $font-family;
+  font-size: 1em;
 }

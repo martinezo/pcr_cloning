@@ -5,5 +5,5 @@
     .col-1
       = text_field_tag :search, '', :size => 23
     .col-2.t-cent
-      = jq_submit_tag t('commands.search')
-      = link_to_jq_button({url: url, text: t('commands.list_all')})
+      = submit_tag_fa_button t('commands.search')
+      = link_to_fa_button({url: url, text: t('commands.list_all'), icon: ''})
