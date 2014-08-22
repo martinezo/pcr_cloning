@@ -13,4 +13,4 @@
         = f.input :password, required: false, input_html: {:size => 30}
       %br
       .form-actions
-        = f.button :submit, t('commands.sign_in'), class: 'jq-button'
+        = submit_tag_fa_button t('commands.sign_in')
