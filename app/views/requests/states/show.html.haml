@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @requests_state.name
+
+= link_to 'Edit', edit_requests_state_path(@requests_state)
+\|
+= link_to 'Back', requests_states_path

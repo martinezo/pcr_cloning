@@ -1,6 +1,10 @@
 PcrCloning::Application.routes.draw do
 
   namespace :requests do
+    resources :states
+  end
+
+  namespace :requests do
     resources :clonings
     get 'clonings/delete/:id' => 'clonings#delete', as: 'cloning_delete'
   end

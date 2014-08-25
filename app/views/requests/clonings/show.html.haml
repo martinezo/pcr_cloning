@@ -1,8 +1,8 @@
 %h1= t('titles.cloning')
 
 .t-right
-  = link_to_jq_button({url: edit_requests_cloning_path(@requests_cloning), text: t('commands.edit'), title: t('commands.edit'), icon: 'pencil', remote: false})
-  = link_to_jq_button({url: requests_clonings_path, text: t('commands.close'), icon: 'close', remote: false})
+  = link_to_fa_button({url: edit_requests_cloning_path(@requests_cloning), text: t('commands.edit'), title: t('commands.edit'), icon: 'fa-pencil', remote: false})
+  = link_to_fa_button({url: requests_clonings_path, text: t('commands.close'), icon: 'fa-times', remote: false})
 .sp
 
 .alert-notice
