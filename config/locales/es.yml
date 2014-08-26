@@ -95,4 +95,15 @@ es:
               blank: es un dato requerido.
             mail:
               blank: es un dato requerido.            
+      models:
+        requests/cloning:
+          attributes:
+            name:
+              blank: es un dato requerido.
+            payment_method:
+              blank: es un dato requerido.
+            sample_name:
+              blank: es un dato requerido.
 
+  show_for:
+    blank: No especificado

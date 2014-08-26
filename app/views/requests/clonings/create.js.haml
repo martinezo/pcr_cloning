@@ -1,0 +1,7 @@
+-#TODO Translate Errors
+- if @errors
+  $('.error-explanation').html("#{escape_javascript(render 'layouts/validation_errors', errors: @errors)}");
+  resize_and_center_ui_dialog();
+- else
+  :plain
+    $('#new-dialog').dialog("close");

@@ -2,6 +2,8 @@
 class Requests::Cloning < ActiveRecord::Base
   validates :name, :sample_name, presence: true
   belongs_to :state, :class_name => 'Requests::State', :foreign_key => :inv_state_id
+  validates :name, :payment_method, :sample_name, presence: true
+
 
   def self.search(search)
     if search

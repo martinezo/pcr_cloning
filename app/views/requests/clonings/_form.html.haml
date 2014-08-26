@@ -1,4 +1,7 @@
+%h1= "#{t('titles.cloning')}"
 
+= render partial: 'layouts/validation_errors', locals: {errors: @requests_cloning.errors}
+.sp
 = simple_form_for @requests_cloning, :html => {:novalidate => true, multipart: true} do |f|
 
   .t-right
