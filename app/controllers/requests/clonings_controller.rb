@@ -32,7 +32,7 @@ class Requests::CloningsController < ApplicationController
     respond_to do |format|
       if @requests_cloning.save
         format.html { redirect_to users_url,
-                                  notice: "User #{@requests_cloning.name  t('notices.saved_successfully')}" }
+                                  notice: "#{@requests_cloning.name  t('notices.saved_successfully')}" }
         format.json { render action: 'show',
                              status: :created, location: @requests_cloning }
       else
