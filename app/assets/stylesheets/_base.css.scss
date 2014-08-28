@@ -110,7 +110,7 @@ strong{
 @mixin t-base{
   clear: both;
   display: table;
-  font-size: 0.85em;
+//  font-size: 0.85em;
   padding: 3px 0px 3px 0px;
   text-indent: 3px;
 }
@@ -250,13 +250,14 @@ a.sortable{
 }
 
 // ERROR MESSAGES
-.ui-state-error {
+.ui-state-error, .ui-state-highlight {
   padding: 0.25em;
   .ui-icon{
     float: left;
     margin-right: 0.25em;
   }
   .message{
+    padding-top: 3px;
     font-weight: bold;
     font-size: 0.75em;
   }
@@ -312,7 +313,7 @@ a.sortable{
   background: asset-url('shade_01.png', image) repeat top $base-color-2;
   color: $base-color-3;
   border: 1px solid lightgrey;
-  &:hover, &:focus{
+  &:hover{
     background-color: #ffffff;
     border: 1px solid $base-color-3;
     font-weight: bold;
@@ -331,5 +332,8 @@ a.sortable{
   label{
     font-weight: bold;
     margin-bottom: 5px;
+  }
+  input{
+    font-family: $font-family;
   }
 }

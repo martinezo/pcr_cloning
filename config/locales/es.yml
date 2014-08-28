@@ -94,5 +94,10 @@ es:
             name:
               blank: es un dato requerido.
             mail:
-              blank: es un dato requerido.            
+              blank: es un dato requerido.
+
+  devise:
+    sessions:
+      devise_user:
+        signed_in: Accceso autorizado
 

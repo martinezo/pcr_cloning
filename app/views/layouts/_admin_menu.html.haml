@@ -6,7 +6,12 @@
       %li
         %a Catálogos
         %ul
-          %li#options
+          %li
+            - if controller_name == 'clonings'
+              =label_tag t('titles.requests_clonings'), nil, class: 'ui-state-disabled'
+            - else
+              =link_to t('titles.requests_clonings'), requests_clonings_path
+          %li
             - if controller_name == 'users'
               =label_tag t('titles.users'), nil, class: 'ui-state-disabled'
             - else
