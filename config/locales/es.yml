@@ -37,7 +37,7 @@ es:
     cloning: Solicitud
     edit: Modificar %{param}
     delete: Borrar (%{param})
-    new: Nuevo %{param}
+    new: Nueva %{param}
 
 
 

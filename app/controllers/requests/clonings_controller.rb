@@ -31,10 +31,14 @@ class Requests::CloningsController < ApplicationController
 
     respond_to do |format|
       if @requests_cloning.save
-        format.html { redirect_to users_url,
-                                  notice: "#{@requests_cloning.name  t('notices.saved_successfully')}" }
+        format.html { redirect_to @requests_cloning, notice: t('notices.saved_successfully') }
+        #format.html { redirect_to users_url,
+        #                          notice: "#{@requests_cloning.name  t('notices.saved_successfully')}" }
         format.json { render action: 'show',
                              status: :created, location: @requests_cloning }
+
+
+
       else
         format.html { render action: 'new' }
         format.json { render json: @requests_cloning.errors,
