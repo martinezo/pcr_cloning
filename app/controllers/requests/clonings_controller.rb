@@ -46,18 +46,6 @@ class Requests::CloningsController < ApplicationController
       end
     end
 
-
-
-
-  # begin
-  #   if @requests_cloning.save
-  #     flash[:notice] = t('notices.saved_successfully')
-  #     render :js => "window.location = '#{edit_requests_cloning_path(@requests_cloning)}'"
-  #   else
-  #     @errors = @requests_cloning.errors
-  #   end
-  # end
-
   end
 
   # PATCH/PUT /requests/clonings/1
@@ -75,17 +63,6 @@ class Requests::CloningsController < ApplicationController
       end
     end
 
-
-
-    #respond_to do |format|
-    #  if @requests_cloning.update(requests_cloning_params)
-    #    format.html { redirect_to @requests_cloning, notice: 'Cloning was successfully updated.' }
-    #    format.json { head :no_content }
-    #  else
-    #    format.html { render action: 'edit' }
-    #    format.json { render json: @requests_cloning.errors, status: :unprocessable_entity }
-    #  end
-    #end
   end
 
 
