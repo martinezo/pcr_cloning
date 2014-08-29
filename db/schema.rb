@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140825041608) do
+ActiveRecord::Schema.define(version: 20140829104912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,8 +35,6 @@ ActiveRecord::Schema.define(version: 20140825041608) do
     t.string   "sample_name"
     t.string   "sample_volume"
     t.string   "pcr_product_size"
-    t.string   "type"
-    t.string   "sequencing_type"
     t.string   "inv_name"
     t.string   "inv_rfc"
     t.string   "inv_address"
@@ -45,6 +43,8 @@ ActiveRecord::Schema.define(version: 20140825041608) do
     t.string   "inv_mail"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "type",             default: 1
+    t.integer  "sequencing_type"
   end
 
   create_table "requests_states", force: true do |t|

@@ -51,15 +51,15 @@
     .col-1
       =f.label :payment_method
     .col-2
-      =f.collection_radio_buttons :payment_method, Requests::Cloning::PMT_METHOD, :first, :last
+      =f.collection_radio_buttons :payment_method, Requests::Cloning::PMT_METHOD, :first, :last, checked: 1
     .col-1
       =f.label :type
     .col-2
-      =f.input_field :type, :size => 60
+      =f.collection_radio_buttons :type, Requests::Cloning::TYPE, :first, :last, checked: 1
     .col-1
       =f.label :sequencing_type
     .col-2
-      =f.input_field :sequencing_type, :size => 60
+      =f.collection_radio_buttons :sequencing_type, Requests::Cloning::SEQ_TYPE, :first, :last, checked: 1
   %h3.t-head= t('titles.invoice_data')
   .tbl-clonings-attr
     .col-1

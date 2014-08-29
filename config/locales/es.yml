@@ -22,7 +22,7 @@ es:
   titles:
     sign_in: Inicio de sessión como administrador
     users: Usuarios
-    requests_clonings: Solicitudes de Clonación de Productos de PCR
+    requests_clonings: Solicitudes de Clonación
     system_config: Configuración del sistema
     user_data: Datos de usuario
     sample_data: Datos de la muestra
@@ -68,7 +68,7 @@ es:
         sample_name: Nombre de la muestra
         sample_volume: Volumen de la muestra
         pcr_product_size: Tamaño del producto de PCR
-        type: Clonación sencilla o  Clonación y Secuenciación
+        type: Tipo
         sequencing_type: Tipo de secuenciación
         inv_name: Razón social
         inv_rfc: R.F.C.
@@ -77,10 +77,6 @@ es:
         inv_state_id: Estado
         inv_mail: Correo para envío de factura
 
-
-
-
- 
     errors:
       models:
         admin/user:
@@ -97,7 +93,7 @@ es:
     sessions:
       devise_user:
         signed_in: Accceso autorizado
-              blank: es un dato requerido.
+        blank: es un dato requerido.
       models:
         requests/cloning:
           attributes:

@@ -24,4 +24,15 @@ class Requests::Cloning < ActiveRecord::Base
       5 => 'Depósito bancario'
    }
 
+   TYPE ={
+       1 => 'Clonación Sencilla',
+       2 => 'Clonación y Secuenciación'
+   }
+
+   SEQ_TYPE ={
+       1 => 'Forward',
+       2 => 'Reverse',
+       3 => 'Ambos'
+   }
+
 end
