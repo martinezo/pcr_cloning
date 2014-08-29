@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 class Requests::Cloning < ActiveRecord::Base
-  validates :name, :sample_name, presence: true
+  belongs_to :state, :class_name => 'Requests::State', :foreign_key => :inv_state_id
+  validates :name, :payment_method, :sample_name, presence: true
+
 
   def self.search(search)
     if search
@@ -13,5 +15,13 @@ class Requests::Cloning < ActiveRecord::Base
     end
   end
 
+
+   PMT_METHOD = {
+      1 => 'UR',
+      2 => 'Conacyt',
+      3 => 'PAPIIT',
+      4 => 'Efectivo',
+      5 => 'Depósito bancario'
+   }
 
 end

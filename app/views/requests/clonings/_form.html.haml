@@ -1,9 +1,10 @@
-
+= render partial: 'layouts/validation_errors', locals: {errors: @requests_cloning.errors}
+.sp
 = simple_form_for @requests_cloning, :html => {:novalidate => true, multipart: true} do |f|
 
   .t-right
     =jq_submit_tag t('commands.save')
-    = link_to_jq_button({url: requests_clonings_path, text: t('commands.cancel'), icon: 'close', remote: false})
+    = link_to_fa_button({url: requests_clonings_path, text: t('commands.cancel'), icon: 'fa-times', remote: false})
   .sp
 
   %h3.t-head= t('titles.user_data')
@@ -50,7 +51,7 @@
     .col-1
       =f.label :payment_method
     .col-2
-      =f.input_field :payment_method, :size => 60
+      =f.collection_radio_buttons :payment_method, Requests::Cloning::PMT_METHOD, :first, :last
     .col-1
       =f.label :type
     .col-2
@@ -80,7 +81,7 @@
     .col-1
       =f.label :inv_state_id
     .col-2
-      =f.input_field :inv_state_id
+      =f.select :inv_state_id, options_from_collection_for_select(Requests::State.all, :id, :name, @requests_cloning.inv_state_id),  :size => 70
     .col-1
       =f.label :inv_mail
     .col-2

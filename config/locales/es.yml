@@ -19,9 +19,6 @@ es:
     send: Enviar
     finish: Terminar
 
-
-
-
   titles:
     sign_in: Inicio de sessión como administrador
     users: Usuarios
@@ -37,7 +34,7 @@ es:
     cloning: Solicitud
     edit: Modificar %{param}
     delete: Borrar (%{param})
-    new: Nuevo %{param}
+    new: Nueva %{param}
 
 
 
@@ -100,4 +97,16 @@ es:
     sessions:
       devise_user:
         signed_in: Accceso autorizado
+              blank: es un dato requerido.
+      models:
+        requests/cloning:
+          attributes:
+            name:
+              blank: es un dato requerido.
+            payment_method:
+              blank: es un dato requerido.
+            sample_name:
+              blank: es un dato requerido.
 
+  show_for:
+    blank: No especificado

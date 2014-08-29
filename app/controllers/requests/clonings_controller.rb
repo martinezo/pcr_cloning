@@ -29,12 +29,34 @@ class Requests::CloningsController < ApplicationController
   def create
     @requests_cloning = Requests::Cloning.new(requests_cloning_params)
 
-    if @requests_cloning.save
-      flash[:notice] = t('notices.saved_successfully')
-      render :js => "window.location = '#{edit_requests_cloning_path(@requests_cloning)}'"
-    else
-      @errors = @requests_cloning.errors
+    respond_to do |format|
+      if @requests_cloning.save
+        format.html { redirect_to @requests_cloning, notice: t('notices.saved_successfully') }
+        #format.html { redirect_to users_url,
+        #                          notice: "#{@requests_cloning.name  t('notices.saved_successfully')}" }
+        format.json { render action: 'show',
+                             status: :created, location: @requests_cloning }
+
+
+
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @requests_cloning.errors,
+                             status: :unprocessable_entity }
+      end
     end
+
+
+
+
+  # begin
+  #   if @requests_cloning.save
+  #     flash[:notice] = t('notices.saved_successfully')
+  #     render :js => "window.location = '#{edit_requests_cloning_path(@requests_cloning)}'"
+  #   else
+  #     @errors = @requests_cloning.errors
+  #   end
+  # end
 
   end
 
@@ -42,6 +64,7 @@ class Requests::CloningsController < ApplicationController
   # PATCH/PUT /requests/clonings/1.json
   def update
 #    @requests_cloning = Requests::Cloning.find(params[:id])
+
     respond_to do |format|
       if @requests_cloning.update(requests_cloning_params)
         format.html { redirect_to @requests_cloning, notice: t('notices.updated_successfully') }
@@ -85,7 +108,10 @@ class Requests::CloningsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def requests_cloning_params
-      params.require(:requests_cloning).permit(:name, :company, :mail, :phone, :shipping_address, :group_leader, :payment_method, :sample_name, :sample_volume, :pcr_product_size, :type, :sequencing_type, :inv_name, :inv_rfc, :inv_address, :inv_city, :inv_municipality, :inv_mail)
+      params.require(:requests_cloning).permit(:name, :company, :mail, :phone, :shipping_address, :group_leader,
+                                               :payment_method, :sample_name, :sample_volume, :pcr_product_size,
+                                               :type, :sequencing_type, :inv_name, :inv_rfc, :inv_address, :inv_city,
+                                               :inv_municipality, :inv_state_id, :inv_mail)
     end
 
   def sort_column

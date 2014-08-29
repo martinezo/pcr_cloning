@@ -1,0 +1,13 @@
+= form_for @requests_state do |f|
+  - if @requests_state.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@requests_state.errors.count, "error")} prohibited this requests_state from being saved:"
+      %ul
+        - @requests_state.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .actions
+    = f.submit 'Save'

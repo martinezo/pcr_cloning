@@ -1,8 +1,8 @@
 %h1= t('titles.cloning')
 
 .t-right
-  = link_to_jq_button({url: edit_requests_cloning_path(@requests_cloning), text: t('commands.edit'), title: t('commands.edit'), icon: 'pencil', remote: false})
-  = link_to_jq_button({url: requests_clonings_path, text: t('commands.close'), icon: 'close', remote: false})
+  = link_to_fa_button({url: edit_requests_cloning_path(@requests_cloning), text: t('commands.edit'), title: t('commands.edit'), icon: 'fa-pencil', remote: false})
+  = link_to_fa_button({url: requests_clonings_path, text: t('commands.close'), icon: 'fa-times', remote: false})
 .sp
 
 .alert-notice
@@ -41,7 +41,7 @@
     .col-1
       = r.label :payment_method
     .col-2
-      = r.value :payment_method
+      =Requests::Cloning::PMT_METHOD[@requests_cloning.payment_method]
     .col-1
       = r.label :sample_name
     .col-2
@@ -83,7 +83,7 @@
     .col-1
       = r.label :inv_state_id
     .col-2
-      = r.value :inv_state_id
+      .wrapper=@requests_cloning.state.name
     .col-1
       = r.label :inv_mail
     .col-2

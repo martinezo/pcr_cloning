@@ -1,0 +1,19 @@
+%h1 Listing requests_states
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @requests_states.each do |requests_state|
+    %tr
+      %td= requests_state.name
+      %td= link_to 'Show', requests_state
+      %td= link_to 'Edit', edit_requests_state_path(requests_state)
+      %td= link_to 'Destroy', requests_state, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New State', new_requests_state_path
