@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Admin::User.create(name: 'Ramón Martínez Olvera', login: 'martinezo', mail: 'martinezo@inb.unam.mx')
+Admin::User.create(name: 'Roberto Martínez Olvera', login: 'rmartinez1006', mail: 'rmartinez1006@prodigy.net.mx')
 Requests::State.create(name: 'Aguascalientes')
 Requests::State.create(name: 'Baja California')
 Requests::State.create(name: 'Baja California Sur')
