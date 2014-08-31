@@ -41,7 +41,7 @@
     .col-1
       = r.label :payment_method
     .col-2
-      =Requests::Cloning::PMT_METHOD[@requests_cloning.payment_method]
+      .wrapper=Requests::Cloning::PMT_METHOD[@requests_cloning.payment_method]
     .col-1
       = r.label :sample_name
     .col-2
@@ -55,13 +55,13 @@
     .col-2
       = r.value :pcr_product_size
     .col-1
-      = r.label :type
+      = r.label :req_type
     .col-2
-      = r.value :type
+      .wrapper=Requests::Cloning::TYPE[@requests_cloning.req_type]
     .col-1
       = r.label :sequencing_type
     .col-2
-      = r.value :sequencing_type
+      .wrapper=Requests::Cloning::SEQ_TYPE[@requests_cloning.sequencing_type]
   %h3.t-head= t('titles.invoice_data')
   .tbl-clonings-attr
     .col-1

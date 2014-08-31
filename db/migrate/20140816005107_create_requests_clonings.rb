@@ -11,12 +11,12 @@ class CreateRequestsClonings < ActiveRecord::Migration
       t.string :sample_name
       t.string :sample_volume
       t.string :pcr_product_size
-      t.integer :type, :default => 1
+      t.integer :req_type, :default => 1
       t.integer :sequencing_type
       t.string :inv_name
       t.string :inv_rfc
       t.string :inv_address
-      t.integer :inv_state_id
+      t.integer :inv_state_id, default: 22
       t.string :inv_municipality
       t.string :inv_mail
 

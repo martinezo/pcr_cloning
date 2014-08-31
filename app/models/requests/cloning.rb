@@ -2,8 +2,7 @@
 class Requests::Cloning < ActiveRecord::Base
   belongs_to :state, :class_name => 'Requests::State', :foreign_key => :inv_state_id
   validates :name, :company, :mail,
-            :sample_name, :sample_volume, :pcr_product_size, :group_leader, :payment_method, :type, presence: true
-
+            :sample_name, :sample_volume, :pcr_product_size, :group_leader, :payment_method, :req_type, presence: true
 
   def self.search(search)
     if search
@@ -14,7 +13,6 @@ class Requests::Cloning < ActiveRecord::Base
       all
     end
   end
-
 
    PMT_METHOD = {
       1 => 'UR',

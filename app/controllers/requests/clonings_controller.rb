@@ -87,7 +87,7 @@ class Requests::CloningsController < ApplicationController
     def requests_cloning_params
       params.require(:requests_cloning).permit(:name, :company, :mail, :phone, :shipping_address, :group_leader,
                                                :payment_method, :sample_name, :sample_volume, :pcr_product_size,
-                                               :type, :sequencing_type, :inv_name, :inv_rfc, :inv_address, :inv_city,
+                                               :req_type, :sequencing_type, :inv_name, :inv_rfc, :inv_address, :inv_city,
                                                :inv_municipality, :inv_state_id, :inv_mail)
     end
 

@@ -30,7 +30,6 @@
   @include four-columns(9,8,3,4);
 }
 
-
 .tbl-system-config{
   @include two-columns(8,16);
   .col-1{
@@ -38,31 +37,16 @@
   }
 }
 
-
-
-
-
-a.sortable{
-  &:link, &:visited{
-    text-decoration: none;
-    color: $base-color-3;
-  }
-  &:hover {
-    background-color: $base-color-4;
-    font-weight: bolder;
-    color: $base-color-2;
-  }
-}
-
-
 .tbl-clonings{
-  @include three-columns(11,11,2);
+  @include three-columns(11,10,3);
 }
 
-.tbl-clonings.t-head{
-  margin-top: 1em;
+.tbl-clonings-attr{
+  @include two-columns(6,18);
+  .col-1{
+    @include t-row-head
+  }
 }
-
 
 //MARGINS
 .tbl-users.t-head{
@@ -72,5 +56,3 @@ a.sortable{
 #tbl-menu{
   @include two-columns(19,5);
 }
-
-

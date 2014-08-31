@@ -20,15 +20,15 @@
     .col-1
       =f.label :mail
     .col-2
-      =f.input_field :mail, :size => 60
+      =f.input_field :mail, :size => 70
     .col-1
       =f.label :phone
     .col-2
-      =f.input_field :phone, :size => 60
+      =f.input_field :phone, :size => 70
     .col-1
       =f.label :shipping_address
     .col-2
-      =f.input_field :shipping_address, :size => 70
+      =f.input_field :shipping_address, :size => 120, placeholder: 'Sólo si requiere que los resultados sean enviados por paquetería (con costo adicional)'
 
   %h3.t-head= t('titles.sample_data')
   .tbl-clonings-attr
@@ -51,15 +51,16 @@
     .col-1
       =f.label :payment_method
     .col-2
-      =f.collection_radio_buttons :payment_method, Requests::Cloning::PMT_METHOD, :first, :last, checked: 1
+      =f.collection_radio_buttons :payment_method, Requests::Cloning::PMT_METHOD, :first, :last, checked: @requests_cloning.payment_method
     .col-1
-      =f.label :type
+      =f.label :req_type
     .col-2
-      =f.collection_radio_buttons :type, Requests::Cloning::TYPE, :first, :last, checked: 1
-    .col-1
-      =f.label :sequencing_type
-    .col-2
-      =f.collection_radio_buttons :sequencing_type, Requests::Cloning::SEQ_TYPE, :first, :last, checked: 1
+      =f.collection_radio_buttons :req_type, Requests::Cloning::TYPE, :first, :last, checked: @requests_cloning.req_type
+    #seq_type
+      .col-1
+        =f.label :sequencing_type
+      .col-2
+        =f.collection_radio_buttons :sequencing_type, Requests::Cloning::SEQ_TYPE, :first, :last, checked: @requests_cloning.sequencing_type
   %h3.t-head= t('titles.invoice_data')
   .tbl-clonings-attr
     .col-1
