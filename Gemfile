@@ -57,3 +57,4 @@ gem 'simple_form'
 gem 'show_for'
 gem 'will_paginate'
 gem "font-awesome-rails"
+gem 'axlsx'

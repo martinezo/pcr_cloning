@@ -77,6 +77,19 @@ class Requests::CloningsController < ApplicationController
     index
   end
 
+  def download_xlsx
+    requests_cloning = Requests::Cloning.all
+    generate_xlsx(requests_cloning)
+    #code for download
+  end
+
+  def generate_xlsx(r)
+    package = Axlsx::Package.new
+    workbook = package.workbook
+
+    package.serialize("public/xlsx/pcr_clonings_requests.xlsx")
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_requests_cloning

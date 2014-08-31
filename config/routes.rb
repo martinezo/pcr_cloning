@@ -7,6 +7,7 @@ PcrCloning::Application.routes.draw do
   namespace :requests do
     resources :clonings
     get 'clonings/delete/:id' => 'clonings#delete', as: 'cloning_delete'
+    get 'download_xlsx' => 'clonings#download_xlsx', as: 'clonning_download_xlsx'
   end
 
   devise_for :devise_users
