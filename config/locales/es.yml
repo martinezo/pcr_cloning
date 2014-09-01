@@ -35,6 +35,8 @@ es:
     edit: Modificar %{param}
     delete: Borrar (%{param})
     new: Nueva %{param}
+    xls_clonings: Descargar lista de solicitudes XLSX
+    clonings: Clonaciones
 
 
 
@@ -68,7 +70,7 @@ es:
         sample_name: Nombre de la muestra
         sample_volume: Volumen de la muestra
         pcr_product_size: Tamaño del producto de PCR
-        type: Tipo
+        req_type: Tipo
         sequencing_type: Tipo de secuenciación
         inv_name: Razón social
         inv_rfc: R.F.C.
@@ -88,12 +90,6 @@ es:
               blank: es un dato requerido.
             mail:
               blank: es un dato requerido.
-
-  devise:
-    sessions:
-      devise_user:
-        signed_in: Accceso autorizado
-        blank: es un dato requerido.
       models:
         requests/cloning:
           attributes:
@@ -103,6 +99,22 @@ es:
               blank: es un dato requerido.
             sample_name:
               blank: es un dato requerido.
+            company:
+              blank: es un dato requerido.
+            mail:
+              blank: es un dato requerido.
+            sample_volume:
+              blank: es un dato requerido.
+            pcr_product_size:
+              blank: es un dato requerido.
+            group_leader:
+              blank: es un dato requerido.
+
+  devise:
+    sessions:
+      devise_user:
+        signed_in: Accceso autorizado
+        blank: es un dato requerido.
 
   show_for:
     blank: No especificado

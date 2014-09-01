@@ -19,3 +19,6 @@ config/ldap.yml
 .idea/
 Gemfile.lock
 **/.DS*
+
+# Ignore xls report
+/public/xlsx/*.*

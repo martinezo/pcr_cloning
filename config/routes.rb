@@ -7,6 +7,8 @@ PcrCloning::Application.routes.draw do
   namespace :requests do
     resources :clonings
     get 'clonings/delete/:id' => 'clonings#delete', as: 'cloning_delete'
+    get 'download_xlsx' => 'clonings#download_xlsx', as: 'clonning_download_xlsx'
+    #get 'clonings/download_xlsx' => 'clonings#download_xlsx', as: 'cloning_download_xlsx'
   end
 
   devise_for :devise_users
@@ -24,7 +26,8 @@ PcrCloning::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'admin/users#index'
+  #root 'admin/users#index'
+  root 'requests/cloning#index'
 
 
   # Example of regular route:
