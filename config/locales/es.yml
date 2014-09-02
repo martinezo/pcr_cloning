@@ -35,6 +35,8 @@ es:
     edit: Modificar %{param}
     delete: Borrar (%{param})
     new: Nueva %{param}
+    req_date: Fecha de la solicitud
+    price: Precio
 
 
 
@@ -68,12 +70,12 @@ es:
         sample_name: Nombre de la muestra
         sample_volume: Volumen de la muestra
         pcr_product_size: Tamaño del producto de PCR
-        type: Tipo
+        req_type: Tipo
         sequencing_type: Tipo de secuenciación
         inv_name: Razón social
         inv_rfc: R.F.C.
         inv_address: Dirección Fiscal
-        inv_municipality: Municipio
+        inv_municipality: Municipio/Deleg.
         inv_state_id: Estado
         inv_mail: Correo para envío de factura
 
@@ -106,3 +108,40 @@ es:
 
   show_for:
     blank: No especificado
+
+#http://blog.lingohub.com/developers/2013/08/internationalization-for-ruby-i18n-gem/
+  time:
+    am: a.m.
+    formats:
+      default: ! '%a, %d %b %Y %H:%M:%S %z'
+      long: ! '%B %d, %Y %H:%M'
+      short: ! '%d %b %H:%M'
+      long_only_date: ! '%d de %B de %Y'
+    pm: p.m.
+
+  date:
+    formats:
+      default: ! '%a, %d %b %Y %H:%M:%S %z'
+      long: ! '%B %d, %Y %H:%M'
+      short: ! '%d %b %H:%M'
+      long_only_date: ! '%d de %B de %Y'
+    order:
+      - :day
+      - :month
+      - :year
+
+    month_names:
+    -
+    - enero
+    - febrero
+    - marzo
+    - abril
+    - mayo
+    - junio
+    - julio
+    - agosto
+    - septiembre
+    - octubre
+    - noviembre
+    - diciembre
+

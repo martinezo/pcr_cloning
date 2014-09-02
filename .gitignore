@@ -19,3 +19,7 @@ config/ldap.yml
 .idea/
 Gemfile.lock
 **/.DS*
+
+/public/pdf/*.*
+!/public/pdf/*/
+/public/xlsx/*.*
