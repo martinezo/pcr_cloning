@@ -4,6 +4,9 @@ class Requests::Cloning < ActiveRecord::Base
   validates :name, :company, :mail,
             :sample_name, :sample_volume, :pcr_product_size, :group_leader, :payment_method, :req_type, presence: true
 
+
+  attr_accessor :start_date, :end_date
+
   def self.search(search)
     if search
       where("(translate(lower(name),'áéíóúàèìòù', 'aeiouaeiou') LIKE translate(lower(?),'áéíóúàèìòù', 'aeiouaeiou')\

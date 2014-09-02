@@ -75,13 +75,16 @@ class Requests::CloningsController < ApplicationController
     index
   end
 
+  def xlsx_range
+    #@requests_cloning = Requests::Cloning.find(1)
+  end
+
+
   def download_xlsx
     requests_cloning = Requests::Cloning.all
     generate_xlsx(requests_cloning)
     send_file("#{Rails.root}/public/xlsx/pcr_clonings_requests.xlsx", filename: "clonings_#{Time.now().strftime('%Y%M%d%H%m')}.xlsx", type: "application/vnd.ms-excel")
   end
-
-
 
 
   def generate_xlsx(requests)

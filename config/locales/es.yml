@@ -37,6 +37,7 @@ es:
     new: Nueva %{param}
     xls_clonings: Descargar lista de solicitudes XLSX
     clonings: Clonaciones
+    xlsx_range: Rango de fechas
 
 
 

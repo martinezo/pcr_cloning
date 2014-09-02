@@ -8,7 +8,8 @@ PcrCloning::Application.routes.draw do
     resources :clonings
     get 'clonings/delete/:id' => 'clonings#delete', as: 'cloning_delete'
     get 'download_xlsx' => 'clonings#download_xlsx', as: 'clonning_download_xlsx'
-    #get 'clonings/download_xlsx' => 'clonings#download_xlsx', as: 'cloning_download_xlsx'
+    get 'xlsx_range' => 'clonings#xlsx_range', as: 'cloning_xlsx_range'
+    #get 'clonings/xlsx_range' => 'clonings#xlsx_range', as: 'cloning_xlsx_range'
   end
 
   devise_for :devise_users
