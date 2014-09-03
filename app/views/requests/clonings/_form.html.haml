@@ -29,6 +29,10 @@
       =f.label :shipping_address
     .col-2
       =f.input_field :shipping_address, :size => 70, placeholder: 'Sólo si requiere que los resultados sean enviados por paquetería (con costo adicional)'
+    .col-1
+      =f.label :group_leader
+    .col-2
+      =f.input_field :group_leader, :size => 60
 
   %h3.t-head= t('titles.sample_data')
   .tbl-clonings-attr
@@ -45,14 +49,6 @@
     .col-2
       =f.input_field :pcr_product_size, :size => 60
     .col-1
-      =f.label :group_leader
-    .col-2
-      =f.input_field :group_leader, :size => 60
-    .col-1
-      =f.label :payment_method
-    .col-2
-      =f.collection_radio_buttons :payment_method, Requests::Cloning::PMT_METHOD, :first, :last, checked: @requests_cloning.payment_method
-    .col-1
       =f.label :req_type
     .col-2
       =f.collection_radio_buttons :req_type, Requests::Cloning::TYPE, :first, :last, checked: @requests_cloning.req_type
@@ -63,6 +59,10 @@
         =f.collection_radio_buttons :sequencing_type, Requests::Cloning::SEQ_TYPE, :first, :last, checked: @requests_cloning.sequencing_type
   %h3.t-head= t('titles.invoice_data')
   .tbl-clonings-attr
+    .col-1
+      =f.label :payment_method
+    .col-2
+      =f.collection_radio_buttons :payment_method, Requests::Cloning::PMT_METHOD, :first, :last, checked: @requests_cloning.payment_method
     .col-1
       =f.label :inv_name
     .col-2

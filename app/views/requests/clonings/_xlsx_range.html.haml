@@ -1,5 +1,9 @@
 .error-explanation
-
+= simple_form_for(:data, url: requests_clonning_download_xlsx_path) do |f|
+  = f.input :start_date, as: :string, input_html: {class: 'jq-datepicker'}
+  .sp
+  = f.input :end_date, as: :string, input_html: {class: 'jq-datepicker'}
+  %br
   .sp
   %hr
   .t-right
