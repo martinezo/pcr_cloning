@@ -59,8 +59,13 @@ function jqmenu(){
     $('#admin-menu').menu({position: { of: $('#admin-menu'), my: "right top", at: "right bottom", collision: "none none" }});
 }
 
+function jqdatepicker(){
+    $('.jq-datepicker').datepicker({ dateFormat: 'yy/mm/dd' });
+}
+
 function load_jquery_ui(){
     jqbuttons();
     remote_will_paginate();
     jqmenu();
+    jqdatepicker();
 }

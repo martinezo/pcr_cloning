@@ -1,10 +1,13 @@
 .error-explanation
-= simple_form_for(:data, url: requests_clonning_download_xlsx_path) do |f|
-  = f.input :start_date, as: :string, input_html: {class: 'jq-datepicker'}
-  .sp
-  = f.input :end_date, as: :string, input_html: {class: 'jq-datepicker'}
-  %br
+= simple_form_for :date_range, url: requests_clonning_download_xlsx_path, remote: true, :html => {multipart: true}  do |f|
+  De
+  = f.input_field :start_date, as: :string, class: 'jq-datepicker'
+  a
+  = f.input_field :end_date, as: :string, class: 'jq-datepicker'
   .sp
   %hr
   .t-right
+    -#TODO cambiar por nuevo helper fa
+    -#TODO en lugar de "Guardar" debe ser "Descargar"
+    -#TODO poner fechas por default (de la facha actual al inicio de mes)
     = jq_submit_tag t('commands.save')
