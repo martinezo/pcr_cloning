@@ -1,5 +1,12 @@
 PcrCloning::Application.routes.draw do
 
+  namespace :public do
+    get "pcr_cloning_requests/new"
+    post "pcr_cloning_requests/create"
+    get "pcr_cloning_requests/sent"
+    get "pdf_req_download/:id" => 'pcr_cloning_requests#pdf_req_download', as: 'pdf_req_download'
+  end
+
   namespace :requests do
     resources :states
   end

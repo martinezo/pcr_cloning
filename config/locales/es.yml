@@ -37,12 +37,12 @@ es:
     new: Nueva %{param}
     req_date: Fecha de la solicitud
     price: Precio
-
-
+    pdf_request: Solicitud PDF
 
   notices:
     saved_successfully: Registro guardado correctamente. 
     updated_successfully: Registro actualizado correctamente.
+    request_successfully_sent: Solicitud enviada
 
   will_paginate:
     previous_label: Anterior

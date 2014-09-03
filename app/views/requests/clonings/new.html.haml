@@ -1,5 +1,5 @@
 %h1= t('titles.new', param: t('titles.cloning') )
 
-= render 'form'
+= render partial: 'form', locals: {url: @requests_cloning.id}
 
 -#= link_to 'Back', requests_clonings_path

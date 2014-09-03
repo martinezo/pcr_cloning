@@ -1,0 +1,3 @@
+%h1= t('titles.new', param: t('titles.cloning') )
+
+= render partial: 'requests/clonings/form', locals: {url: public_pcr_cloning_requests_create_path}
