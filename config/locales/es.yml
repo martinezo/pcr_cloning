@@ -18,6 +18,7 @@ es:
     registration: Registro
     send: Enviar
     finish: Terminar
+    xlsx_download: Descargar
 
   titles:
     sign_in: Inicio de sessión como administrador

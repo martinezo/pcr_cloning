@@ -7,9 +7,13 @@ PcrCloning::Application.routes.draw do
   namespace :requests do
     resources :clonings
     get 'clonings/delete/:id' => 'clonings#delete', as: 'cloning_delete'
-    get 'download_xlsx' => 'clonings#download_xlsx', as: 'clonning_download_xlsx'
+    get 'download_xlsx/:id' => 'clonings#download_xlsx', as: 'clonning_download_xlsx'
     get 'xlsx_range' => 'clonings#xlsx_range', as: 'cloning_xlsx_range'
+    post 'xlsx_file' => 'clonings#xlsx_file', as: 'clonning_xlsx_file'
     #get 'clonings/xlsx_range' => 'clonings#xlsx_range', as: 'cloning_xlsx_range'
+
+    #post 'cloning/xlsx_file' => 'clonings#xlsx_file', as: 'cloning_xlsx_file'
+
   end
 
   devise_for :devise_users

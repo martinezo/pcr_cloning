@@ -1,0 +1,7 @@
+- if @errors
+  $('.error-explanation').html("#{escape_javascript(render 'layouts/validation_errors', errors: @errors)}");
+  center_ui_dialog();
+- else
+  :plain
+    $('#xlsx-range').dialog("close");
+    jqbuttons();
