@@ -81,17 +81,15 @@ class Requests::CloningsController < ApplicationController
 
   def xlsx_file
     render :js => "window.location = '#{requests_clonning_download_xlsx_path(id: params[:date_range])}'"
-    #redirect_to requests_clonning_download_xlsx_path
   end
 
   def download_xlsx
     date_range = params[:id]
-    start_date = date_range.split('&')[0]
-    start_date = start_date.split('=')[1]
-    end_date = date_range.split('&')[1]
+    end_date = date_range.split('&')[0]
     end_date = end_date.split('=')[1]
-    requests_cloning = Requests::Cloning.all
-        #where( ["created_at >= :start_date AND created_at <= :end_date", { :start_date => start_date, :end_date => end_date }])
+    start_date = date_range.split('&')[1]
+    start_date = start_date.split('=')[1]
+    requests_cloning = Requests::Cloning.where( ["created_at >= :start_date AND created_at <= :end_date", { :start_date => start_date, :end_date => end_date }])
     generate_xlsx(requests_cloning)
     send_file("#{Rails.root}/public/xlsx/pcr_clonings_requests.xlsx", filename: "clonings_#{Time.now().strftime('%Y%M%d%H%m')}.xlsx", type: "application/vnd.ms-excel")
   end

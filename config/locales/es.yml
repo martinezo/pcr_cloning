@@ -80,6 +80,7 @@ es:
         inv_municipality: Municipio
         inv_state_id: Estado
         inv_mail: Correo para envío de factura
+        folio: Folio
 
     errors:
       models:
