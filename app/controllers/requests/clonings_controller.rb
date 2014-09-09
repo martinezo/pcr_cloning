@@ -124,6 +124,7 @@ class Requests::CloningsController < ApplicationController
 
       #Cloning requests - Detail
       values = nil
+      req_type = nil
       requests.each_with_index  do |r,i|
         values = [i+1]
         r.attributes.each do |f|
@@ -132,11 +133,16 @@ class Requests::CloningsController < ApplicationController
             when "created_at"
             when "updated_at"
             when "req_type"
+              req_type = f[1]
               values<< Requests::Cloning::TYPE[f[1]]
             when "sequencing_type"
-              values << Requests::Cloning::SEQ_TYPE[f[1]]
+              if req_type.to_i > 1
+                 values << Requests::Cloning::SEQ_TYPE[f[1]]
+              else
+                values << ' '
+              end
             when 'payment_method'
-              values << Requests::Cloning::PMT_METHOD[f[1]]
+                values << Requests::Cloning::PMT_METHOD[f[1]]
             when 'inv_state_id'
               values << r.state.name
             else
