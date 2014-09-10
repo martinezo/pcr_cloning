@@ -9,13 +9,14 @@
 =render 'layouts/search', url: requests_clonings_path
 
 %br
-
 #record-list
   =render partial: 'record_tbl'
 
 %br
-
 = link_to_fa_button({url: new_requests_cloning_path, text: t('commands.new'), icon: 'fa-plus-square-o',remote: false})
+
+.sp
+
 
 
 #delete-dialog

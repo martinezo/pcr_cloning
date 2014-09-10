@@ -23,6 +23,7 @@ es:
     sign_in: Inicio de sessión como administrador
     users: Usuarios
     requests_clonings: Solicitudes de Clonación
+    request_cloning: Solicitude de Clonación
     system_config: Configuración del sistema
     user_data: Datos de usuario
     sample_data: Datos de la muestra

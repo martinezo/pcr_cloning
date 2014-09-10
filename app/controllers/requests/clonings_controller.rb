@@ -8,7 +8,6 @@ class Requests::CloningsController < ApplicationController
   # GET /requests/clonings
   # GET /requests/clonings.json
   def index
-    #@requests_clonings = Requests::Cloning.all
     @requests_clonings = Requests::Cloning.search(params[:search]).order("#{sort_column} #{sort_direction}").paginate(per_page: 15, page:  params[:page])
   end
 

@@ -1,4 +1,7 @@
 class Public::PcrCloningRequestsController < ApplicationController
+
+  require 'pdf_generator'
+
   def new
     @requests_cloning = Requests::Cloning.new
   end
@@ -11,6 +14,10 @@ class Public::PcrCloningRequestsController < ApplicationController
         #Generarte PDF
         filename = "public/pdf/#{'%.6d' % @requests_cloning.id}_pcr.pdf"
         PdfGenerator.request(@requests_cloning, filename)
+        #Send mails
+        PcrCloningMailer.user_notification(@requests_cloning, filename).deliver unless @requests_cloning.mail.strip.empty?
+        PcrCloningMailer.admin_notification(@requests_cloning, filename).deliver
+        PcrCloningMailer.deposit_notification(@requests_cloning, filename).deliver unless @requests_cloning.payment_method < 4 #Deposit or cash
         format.html { redirect_to public_pcr_cloning_requests_sent_path, flash: {request_id: @requests_cloning.id}}
       else
         format.html { render action: 'new' }
