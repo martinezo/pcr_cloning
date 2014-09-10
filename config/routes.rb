@@ -34,8 +34,13 @@ PcrCloning::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+<<<<<<< HEAD
   root 'admin/users#index'
   # root 'requests/cloning#index'
+=======
+  #root 'admin/users#index'
+  root 'requests/cloning#index'
+>>>>>>> full_implementation_xlsx
 
 
   # Example of regular route:

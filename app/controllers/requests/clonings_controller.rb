@@ -36,8 +36,6 @@ class Requests::CloningsController < ApplicationController
         filename = "public/pdf/#{'%.6d' % @requests_cloning.id}_pcr.pdf"
         PdfGenerator.request(@requests_cloning, filename)
         format.html { redirect_to @requests_cloning, notice: t('notices.saved_successfully') }
-        #format.html { redirect_to users_url,
-        #                          notice: "#{@requests_cloning.name  t('notices.saved_successfully')}" }
         format.json { render action: 'show',
                              status: :created, location: @requests_cloning }
 
@@ -83,6 +81,75 @@ class Requests::CloningsController < ApplicationController
     @requests_cloning.destroy
     index
   end
+
+  def xlsx_range
+    #@requests_cloning = Requests::Cloning.find(1)
+  end
+
+
+  def download_xlsx
+    requests_cloning = Requests::Cloning.all
+    generate_xlsx(requests_cloning)
+    send_file("#{Rails.root}/public/xlsx/pcr_clonings_requests.xlsx", filename: "clonings_#{Time.now().strftime('%Y%M%d%H%m')}.xlsx", type: "application/vnd.ms-excel")
+  end
+
+
+  def generate_xlsx(requests)
+    package = Axlsx::Package.new
+    workbook = package.workbook
+
+    workbook.add_worksheet(name: "Clonaciones") do |sheet|
+      title = sheet.styles.add_style sz: 16, b: 1
+      headers = sheet.styles.add_style sz: 12, alignment: { horizontal: :left }, b: 1, fg_color: '000000', bg_color: "dee1e3"
+
+      # Course name and start date
+      sheet.add_row ["#{t("titles.requests_clonings")}"], :style => title, :widths=>[6]
+      sheet.add_row
+
+
+      # Records header
+      values = ['No.']
+      #requests cloning Headers
+      requests.column_names.each do |f|
+        case f
+          when "id"
+          when "created_at"
+          when "updated_at"
+          else
+           values << I18n.t("activerecord.attributes.requests/cloning.#{f.to_s}")
+        end
+      end
+      sheet.add_row values, :style => headers
+
+      #Cloning requests - Detail
+      values = nil
+      requests.each_with_index  do |r,i|
+        values = [i+1]
+        r.attributes.each do |f|
+          case f[0]
+            when "id"
+            when "created_at"
+            when "updated_at"
+            when "req_type"
+              values<< Requests::Cloning::TYPE[f[1]]
+            when "sequencing_type"
+              values << Requests::Cloning::SEQ_TYPE[f[1]]
+            when 'payment_method'
+              values << Requests::Cloning::PMT_METHOD[f[1]]
+            when 'inv_state_id'
+              values << r.state.name
+            else
+              values << f[1]
+          end
+        end
+        sheet.add_row values
+      end
+
+     end # end workbook
+
+    package.serialize("public/xlsx/pcr_clonings_requests.xlsx")
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

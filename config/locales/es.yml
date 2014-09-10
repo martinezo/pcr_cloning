@@ -36,9 +36,17 @@ es:
     edit: Modificar %{param}
     delete: Borrar (%{param})
     new: Nueva %{param}
+<<<<<<< HEAD
     req_date: Fecha de la solicitud
     price: Precio
     pdf_request: Solicitud PDF
+=======
+    xls_clonings: Descargar lista de solicitudes XLSX
+    clonings: Clonaciones
+    xlsx_range: Rango de fechas
+
+
+>>>>>>> full_implementation_xlsx
 
   notices:
     saved_successfully: Registro guardado correctamente. 
@@ -91,12 +99,6 @@ es:
               blank: es un dato requerido.
             mail:
               blank: es un dato requerido.
-
-  devise:
-    sessions:
-      devise_user:
-        signed_in: Accceso autorizado
-        blank: es un dato requerido.
       models:
         requests/cloning:
           attributes:
@@ -106,6 +108,22 @@ es:
               blank: es un dato requerido.
             sample_name:
               blank: es un dato requerido.
+            company:
+              blank: es un dato requerido.
+            mail:
+              blank: es un dato requerido.
+            sample_volume:
+              blank: es un dato requerido.
+            pcr_product_size:
+              blank: es un dato requerido.
+            group_leader:
+              blank: es un dato requerido.
+
+  devise:
+    sessions:
+      devise_user:
+        signed_in: Accceso autorizado
+        blank: es un dato requerido.
 
   show_for:
     blank: No especificado

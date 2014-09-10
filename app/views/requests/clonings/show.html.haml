@@ -32,16 +32,13 @@
       = r.label :shipping_address
     .col-2
       = r.value :shipping_address
-  %h3.t-head= t('titles.sample_data')
-  .tbl-clonings-attr
     .col-1
       = r.label :group_leader
     .col-2
       = r.value :group_leader
-    .col-1
-      = r.label :payment_method
-    .col-2
-      .wrapper=Requests::Cloning::PMT_METHOD[@requests_cloning.payment_method]
+
+  %h3.t-head= t('titles.sample_data')
+  .tbl-clonings-attr
     .col-1
       = r.label :sample_name
     .col-2
@@ -64,6 +61,10 @@
       .wrapper=Requests::Cloning::SEQ_TYPE[@requests_cloning.sequencing_type]
   %h3.t-head= t('titles.invoice_data')
   .tbl-clonings-attr
+    .col-1
+      = r.label :payment_method
+    .col-2
+      .wrapper=Requests::Cloning::PMT_METHOD[@requests_cloning.payment_method]
     .col-1
       = r.label :inv_name
     .col-2

@@ -4,6 +4,7 @@ class Requests::Cloning < ActiveRecord::Base
   validates :name, :company, :mail,
             :sample_name, :sample_volume, :pcr_product_size, :group_leader, :payment_method, :req_type, presence: true
 
+<<<<<<< HEAD
   before_validation :set_price
 
   def set_price
@@ -14,6 +15,10 @@ class Requests::Cloning < ActiveRecord::Base
       self.price = Admin::SystemConfig.external_price
     end
   end
+=======
+
+  attr_accessor :start_date, :end_date
+>>>>>>> full_implementation_xlsx
 
   def self.search(search)
     if search

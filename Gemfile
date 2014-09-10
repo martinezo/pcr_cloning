@@ -56,5 +56,10 @@ gem 'compass-rails'
 gem 'simple_form'
 gem 'show_for'
 gem 'will_paginate'
+<<<<<<< HEAD
 gem 'font-awesome-rails'
 gem 'prawn'
+=======
+gem "font-awesome-rails"
+gem 'axlsx'
+>>>>>>> full_implementation_xlsx
