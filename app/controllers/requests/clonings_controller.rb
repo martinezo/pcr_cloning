@@ -88,7 +88,9 @@ class Requests::CloningsController < ApplicationController
 
 
   def download_xlsx
-    requests_cloning = Requests::Cloning.all
+    start_date = params['date_range']['start_date'].to_date
+    end_date = params['date_range']['end_date'].to_date
+    requests_cloning = Requests::Cloning.where(:created_at => start_date.beginning_of_day..end_date.end_of_day)
     generate_xlsx(requests_cloning)
     send_file("#{Rails.root}/public/xlsx/pcr_clonings_requests.xlsx", filename: "clonings_#{Time.now().strftime('%Y%M%d%H%m')}.xlsx", type: "application/vnd.ms-excel")
   end
