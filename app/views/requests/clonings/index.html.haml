@@ -13,14 +13,15 @@
   = link_to_fa_button({url: new_requests_cloning_path, text: t('commands.new'), icon: 'fa-plus-square-o',remote: false})
   = link_to_fa_button({url: requests_cloning_xlsx_range_path, text: t('titles.xls_clonings'), icon:'fa-download',remote: true})
 %br
-
 #record-list
   =render partial: 'record_tbl'
 
-%br
+.sp
 .t-right
   = link_to_fa_button({url: new_requests_cloning_path, text: t('commands.new'), icon: 'fa-plus-square-o',remote: false})
   = link_to_fa_button({url: requests_cloning_xlsx_range_path, text: t('titles.xls_clonings'), icon:'fa-download',remote: true})
+
+.sp
 
 #delete-dialog
 #xlsx-range

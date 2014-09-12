@@ -24,6 +24,7 @@ es:
     sign_in: Inicio de sessión como administrador
     users: Usuarios
     requests_clonings: Solicitudes de Clonación
+    request_cloning: Solicitude de Clonación
     system_config: Configuración del sistema
     user_data: Datos de usuario
     sample_data: Datos de la muestra
@@ -36,15 +37,18 @@ es:
     edit: Modificar %{param}
     delete: Borrar (%{param})
     new: Nueva %{param}
+    req_date: Fecha de la solicitud
+    price: Precio
+    pdf_request: Solicitud PDF
     xls_clonings: Descargar lista de solicitudes XLSX
     clonings: Clonaciones
-    xlsx_range: Rango de fechas
-
-
+    xlsx_range: Periodo
+    xlsx_file: Archivo de Excel
 
   notices:
     saved_successfully: Registro guardado correctamente. 
     updated_successfully: Registro actualizado correctamente.
+    request_successfully_sent: Solicitud enviada
 
   will_paginate:
     previous_label: Anterior
@@ -77,10 +81,11 @@ es:
         inv_name: Razón social
         inv_rfc: R.F.C.
         inv_address: Dirección Fiscal
-        inv_municipality: Municipio
+        inv_municipality: Municipio/Deleg.
         inv_state_id: Estado
         inv_mail: Correo para envío de factura
         folio: Folio
+        created_at: Fecha Solicitud
 
     errors:
       models:
@@ -121,3 +126,40 @@ es:
 
   show_for:
     blank: No especificado
+
+#http://blog.lingohub.com/developers/2013/08/internationalization-for-ruby-i18n-gem/
+  time:
+    am: a.m.
+    formats:
+      default: ! '%a, %d %b %Y %H:%M:%S %z'
+      long: ! '%B %d, %Y %H:%M'
+      short: ! '%d %b %H:%M'
+      long_only_date: ! '%d de %B de %Y'
+    pm: p.m.
+
+  date:
+    formats:
+      default: ! '%a, %d %b %Y %H:%M:%S %z'
+      long: ! '%B %d, %Y %H:%M'
+      short: ! '%d %b %H:%M'
+      long_only_date: ! '%d de %B de %Y'
+    order:
+      - :day
+      - :month
+      - :year
+
+    month_names:
+    -
+    - enero
+    - febrero
+    - marzo
+    - abril
+    - mayo
+    - junio
+    - julio
+    - agosto
+    - septiembre
+    - octubre
+    - noviembre
+    - diciembre
+

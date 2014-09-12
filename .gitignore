@@ -20,5 +20,9 @@ config/ldap.yml
 Gemfile.lock
 **/.DS*
 
+# Ignore pdf
+/public/pdf/*.*
+!/public/pdf/*/
+
 # Ignore xls report
 /public/xlsx/*.*

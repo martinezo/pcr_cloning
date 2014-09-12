@@ -1,6 +1,6 @@
 %h1= t('titles.edit', param: t('titles.cloning') )
 
-= render 'form'
+= render partial: 'form', locals: {url: @requests_cloning}
 
 
 -#= render 'form', url: @requests_cloning, url_cancel: requests_clonings_path

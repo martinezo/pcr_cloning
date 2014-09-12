@@ -1,0 +1,4 @@
+%h1.t-cent= t('notices.request_successfully_sent')
+.t-cent
+  =link_to_fa_button({url: public_pdf_req_download_path(@id), text: t('commands.download', param: t('titles.pdf_request')), icon: 'fa-download', remote: false})
+  =link_to_fa_button({url: public_pcr_cloning_requests_new_path, text: t('commands.finish'), icon: 'fa-times', remote: false})

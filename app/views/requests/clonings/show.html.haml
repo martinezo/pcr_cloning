@@ -40,6 +40,10 @@
   %h3.t-head= t('titles.sample_data')
   .tbl-clonings-attr
     .col-1
+      = r.label :created_at
+    .col-2
+      = r.value :created_at, :format => :long_only_date
+    .col-1
       = r.label :sample_name
     .col-2
       = r.value :sample_name

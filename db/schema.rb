@@ -10,48 +10,42 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-
-ActiveRecord::Schema.define(version: 20140905042921) do
-
-  # These are extensions that must be enabled in order to support this database
+ActiveRecord::Schema.define(version: 20140902215234) do
+# These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
   create_table "admin_users", force: true do |t|
-    t.string   "login"
-    t.string   "name"
-    t.string   "mail"
+    t.string "login"
+    t.string "name"
+    t.string "mail"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
   create_table "requests_clonings", force: true do |t|
-    t.string   "name"
-    t.string   "company"
-    t.string   "mail"
-    t.string   "phone"
-    t.string   "shipping_address"
-    t.string   "group_leader"
-    t.integer  "payment_method",   default: 1
-    t.string   "sample_name"
-    t.string   "sample_volume"
-    t.string   "pcr_product_size"
-    t.integer  "req_type",         default: 1
-    t.integer  "sequencing_type"
-    t.string   "inv_name"
-    t.string   "inv_rfc"
-    t.string   "inv_address"
-    t.integer  "inv_state_id",     default: 22
-    t.string   "inv_municipality"
-    t.string   "inv_mail"
+    t.string "name"
+    t.string "company"
+    t.string "mail"
+    t.string "phone"
+    t.string "shipping_address"
+    t.string "group_leader"
+    t.integer "payment_method", default: 1
+    t.string "sample_name"
+    t.string "sample_volume"
+    t.string "pcr_product_size"
+    t.integer "req_type", default: 1
+    t.integer "sequencing_type"
+    t.string "inv_name"
+    t.string "inv_rfc"
+    t.string "inv_address"
+    t.integer "inv_state_id", default: 22
+    t.string "inv_municipality"
+    t.string "inv_mail"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "folio"
+    t.decimal "price", default: 0.0
   end
-
   create_table "requests_states", force: true do |t|
-    t.string   "name"
+    t.string "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
 end

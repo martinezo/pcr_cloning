@@ -1,11 +1,9 @@
 = render partial: 'layouts/validation_errors', locals: {errors: @requests_cloning.errors}
 .sp
-= simple_form_for @requests_cloning, :html => {:novalidate => true, multipart: true} do |f|
+= simple_form_for @requests_cloning, url: url, :html => {:novalidate => true, multipart: true} do |f|
 
-  .t-right
-    =submit_tag_fa_button t('commands.save')
-    =link_to_fa_button({url: requests_clonings_path, text: t('commands.cancel'), icon: 'fa-times', remote: false})
-  .sp
+  = render partial: 'commands_for_form'
+  %hr
 
   %h3.t-head= t('titles.user_data')
   .tbl-clonings-attr
@@ -89,9 +87,8 @@
       =f.input_field :inv_mail, :size => 60
   .sp
   %hr
-  .t-right
-    =submit_tag_fa_button t('commands.save')
-    =link_to_fa_button({url: requests_clonings_path, text: t('commands.cancel'), icon: 'fa-times', remote: false})
+
+  = render partial: 'commands_for_form'
   .sp
 
 

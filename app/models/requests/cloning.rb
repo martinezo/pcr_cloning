@@ -4,7 +4,18 @@ class Requests::Cloning < ActiveRecord::Base
   validates :name, :company, :mail,
             :sample_name, :sample_volume, :pcr_product_size, :group_leader, :payment_method, :req_type, presence: true
 
+  before_validation :set_price
 
+  def set_price
+    Admin::SystemConfig.get
+    if self.payment_method < 4
+      self.price = Admin::SystemConfig.internal_price
+    else
+      self.price = Admin::SystemConfig.external_price
+    end
+  end
+
+  #TODO remove if possible
   attr_accessor :start_date, :end_date
 
   def self.search(search)
