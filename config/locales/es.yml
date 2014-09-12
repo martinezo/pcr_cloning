@@ -36,17 +36,13 @@ es:
     edit: Modificar %{param}
     delete: Borrar (%{param})
     new: Nueva %{param}
-<<<<<<< HEAD
     req_date: Fecha de la solicitud
     price: Precio
     pdf_request: Solicitud PDF
-=======
     xls_clonings: Descargar lista de solicitudes XLSX
     clonings: Clonaciones
-    xlsx_range: Rango de fechas
-
-
->>>>>>> full_implementation_xlsx
+    xlsx_range: Periodo
+    xlsx_file: Archivo de Excel
 
   notices:
     saved_successfully: Registro guardado correctamente. 

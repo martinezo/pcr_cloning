@@ -93,7 +93,6 @@ class Requests::CloningsController < ApplicationController
     send_file("#{Rails.root}/public/xlsx/pcr_clonings_requests.xlsx", filename: "clonings_#{Time.now().strftime('%Y%M%d%H%m')}.xlsx", type: "application/vnd.ms-excel")
   end
 
-
   def generate_xlsx(requests)
     package = Axlsx::Package.new
     workbook = package.workbook

@@ -20,7 +20,7 @@ config/ldap.yml
 Gemfile.lock
 **/.DS*
 
-# Ignore pdf 
+# Ignore pdf
 /public/pdf/*.*
 !/public/pdf/*/
 
