@@ -83,6 +83,9 @@ es:
         inv_municipality: Municipio/Deleg.
         inv_state_id: Estado
         inv_mail: Correo para envío de factura
+        price: Precio
+        created_at: Fecha de Solicitud
+        folio: Folio
 
     errors:
       models:

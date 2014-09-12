@@ -82,6 +82,13 @@ class Requests::CloningsController < ApplicationController
     index
   end
 
+  def pdf_req_download
+    @requests_cloning = Requests::Cloning.find_by_folio(params[:folio])
+    filename= "#{'%.6d' % @requests_cloning.id}_pcr.pdf"
+    file = "public/pdf/#{filename}"
+    send_file  file, filename: filename, type: "application/pdf"
+  end
+
   def xlsx_range
     #@requests_cloning = Requests::Cloning.find(1)
   end
@@ -90,12 +97,15 @@ class Requests::CloningsController < ApplicationController
   def download_xlsx
     start_date = params['date_range']['start_date'].to_date
     end_date = params['date_range']['end_date'].to_date
-    requests_cloning = Requests::Cloning.where(:created_at => start_date.beginning_of_day..end_date.end_of_day)
-    generate_xlsx(requests_cloning)
+    select = "created_at, sample_name, sample_volume, pcr_product_size, req_type,\
+              sequencing_type, name, company, mail, phone, shipping_address, group_leader,\
+              payment_method, inv_name, inv_rfc, inv_address, inv_state_id, inv_municipality, inv_mail, price"
+    requests_cloning = Requests::Cloning.select(select).where(:created_at => start_date.beginning_of_day..end_date.end_of_day)
+    generate_xlsx(requests_cloning, start_date, end_date, select)
     send_file("#{Rails.root}/public/xlsx/pcr_clonings_requests.xlsx", filename: "clonings_#{Time.now().strftime('%Y%M%d%H%m')}.xlsx", type: "application/vnd.ms-excel")
   end
 
-  def generate_xlsx(requests)
+  def generate_xlsx(requests, start_date, end_date, columns)
     package = Axlsx::Package.new
     workbook = package.workbook
 
@@ -104,22 +114,24 @@ class Requests::CloningsController < ApplicationController
       headers = sheet.styles.add_style sz: 12, alignment: { horizontal: :left }, b: 1, fg_color: '000000', bg_color: "dee1e3"
 
       # Course name and start date
-      sheet.add_row ["#{t("titles.requests_clonings")}"], :style => title, :widths=>[6]
+      sheet.add_row ["#{t("titles.requests_clonings")} (#{start_date} -  #{end_date})"], :style => title, :widths=>[6]
       sheet.add_row
-
 
       # Records header
       values = ['No.']
-      #requests cloning Headers
-      requests.column_names.each do |f|
-        case f
-          when "id"
-          when "created_at"
-          when "updated_at"
-          else
-           values << I18n.t("activerecord.attributes.requests/cloning.#{f.to_s}")
-        end
+      columns.split(',').each do |c|
+        values << I18n.t("activerecord.attributes.requests/cloning.#{c.strip}")
       end
+      #requests cloning Headers
+      #requests.column_names.each do |f|
+      #  case f
+      #    when "id"
+      #    when "created_at"
+      #    when "updated_at"
+      #    else
+      #     values << I18n.t("activerecord.attributes.requests/cloning.#{f.to_s}")
+      #  end
+      #end
       sheet.add_row values, :style => headers
 
       #Cloning requests - Detail
@@ -128,9 +140,6 @@ class Requests::CloningsController < ApplicationController
         values = [i+1]
         r.attributes.each do |f|
           case f[0]
-            when "id"
-            when "created_at"
-            when "updated_at"
             when "req_type"
               values<< Requests::Cloning::TYPE[f[1]]
             when "sequencing_type"

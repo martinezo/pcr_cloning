@@ -5,6 +5,11 @@ class Requests::Cloning < ActiveRecord::Base
             :sample_name, :sample_volume, :pcr_product_size, :group_leader, :payment_method, :req_type, presence: true
 
   before_validation :set_price
+  before_create :set_folio
+
+  def set_folio
+    self.folio = Time.now
+  end
 
   def set_price
     Admin::SystemConfig.get

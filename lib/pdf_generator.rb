@@ -24,12 +24,20 @@ class PdfGenerator
       col_2 = make_table data, column_widths: 2.in, cell_style: c_style.merge(c_style_d)
       table [[col_1, col_2]], position: :right
 
+      t = 'activerecord.attributes.requests/cloning.'
+
+       # FOLIO
+      headers = [[I18n.t("#{t}folio")]]
+      data = [[r.folio]]
+      col_1 = make_table headers, column_widths: 2.in, cell_style: c_style.merge(c_style_h)
+      col_2 = make_table data, column_widths: 2.in, cell_style: c_style.merge(c_style_d)
+      table [[col_1, col_2]], position: :right
+
       move_down (0.25).in
 
       # USER DATA
       pad(10) { text I18n.t('titles.user_data'), style: :bold, size: 12 }
 
-      t = 'activerecord.attributes.requests/cloning.'
 
       headers = [[I18n.t("#{t}name")], [I18n.t("#{t}company")], [I18n.t("#{t}mail")], [I18n.t("#{t}phone")], [I18n.t("#{t}shipping_address")], [I18n.t("#{t}group_leader")]]
       data = [[r.name], [r.company], [r.mail], [r.phone],[r.shipping_address],[r.group_leader]]

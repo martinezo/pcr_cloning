@@ -18,7 +18,7 @@ class Public::PcrCloningRequestsController < ApplicationController
         PcrCloningMailer.user_notification(@requests_cloning, filename).deliver unless @requests_cloning.mail.strip.empty?
         PcrCloningMailer.admin_notification(@requests_cloning, filename).deliver
         PcrCloningMailer.deposit_notification(@requests_cloning, filename).deliver unless @requests_cloning.payment_method < 4 #Deposit or cash
-        format.html { redirect_to public_pcr_cloning_requests_sent_path, flash: {request_id: @requests_cloning.id}}
+        format.html { redirect_to public_pcr_cloning_requests_sent_path, flash: {request_folio: @requests_cloning.folio}}
       else
         format.html { render action: 'new' }
         format.json { render json: @requests_cloning.errors, status: :unprocessable_entity }
@@ -27,11 +27,12 @@ class Public::PcrCloningRequestsController < ApplicationController
   end
 
   def sent
-    @id=flash[:request_id]
+    @folio=flash[:request_folio]
   end
 
   def pdf_req_download
-    filename= "#{'%.6d' % params[:id].to_i}_pcr.pdf"
+    @requests_cloning = Requests::Cloning.find_by_folio(params[:folio])
+    filename= "#{'%.6d' % @requests_cloning.id}_pcr.pdf"
     file = "public/pdf/#{filename}"
     send_file  file, filename: filename, type: "application/pdf"
   end

@@ -4,7 +4,7 @@ PcrCloning::Application.routes.draw do
     get "pcr_cloning_requests/new"
     post "pcr_cloning_requests/create"
     get "pcr_cloning_requests/sent"
-    get "pdf_req_download/:id" => 'pcr_cloning_requests#pdf_req_download', as: 'pdf_req_download'
+    get "pdf_req_download/:folio" => 'pcr_cloning_requests#pdf_req_download', as: 'pdf_req_download'
   end
 
   namespace :requests do
@@ -16,6 +16,7 @@ PcrCloning::Application.routes.draw do
     get 'clonings/delete/:id' => 'clonings#delete', as: 'cloning_delete'
     post 'download_xlsx' => 'clonings#download_xlsx', as: 'clonning_download_xlsx'
     get 'xlsx_range' => 'clonings#xlsx_range', as: 'cloning_xlsx_range'
+    get "pdf_req_download/:folio" => 'clonings#pdf_req_download', as: 'pdf_req_download'
   end
 
   devise_for :devise_users
@@ -33,8 +34,8 @@ PcrCloning::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'admin/users#index'
-  # root 'requests/cloning#index'
+  # root 'admin/users#index'
+  root 'requests/clonings#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
