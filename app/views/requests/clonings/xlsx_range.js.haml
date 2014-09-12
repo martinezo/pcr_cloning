@@ -8,3 +8,6 @@
   jqdatepicker();
   -//If focus is in date inputs jquery calendar dosen't appear on click
   $('[name="commit"]').focus();
+  $('[name="commit"]').click(function(){
+    $('#xlsx-range').dialog('close');
+  })

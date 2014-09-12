@@ -1,5 +1,5 @@
 .error-explanation
-= simple_form_for :date_range, url: requests_clonning_download_xlsx_path, remote: true, :html => {multipart: true}  do |f|
+= simple_form_for :date_range, url: requests_clonning_download_xlsx_path,  :html => {multipart: true}  do |f|
   De
   = f.input_field :start_date, class: 'jq-datepicker', value: Date.today.beginning_of_month.strftime('%Y/%m/%d'), autofocus: false
   a
