@@ -1,6 +1,7 @@
 class Requests::CloningsController < ApplicationController
 
   require 'pdf_generator'
+  require 'xlsx_generator'
 
   before_action :set_requests_cloning, only: [:show, :edit, :update, :destroy, :delete]
   helper_method :sort_column, :sort_direction
@@ -97,14 +98,15 @@ class Requests::CloningsController < ApplicationController
   def download_xlsx
     start_date = params['date_range']['start_date'].to_date
     end_date = params['date_range']['end_date'].to_date
-    select = "created_at, sample_name, sample_volume, pcr_product_size, req_type,\
+    select = "folio, created_at, sample_name, sample_volume, pcr_product_size, req_type,\
               sequencing_type, name, company, mail, phone, shipping_address, group_leader,\
               payment_method, inv_name, inv_rfc, inv_address, inv_state_id, inv_municipality, inv_mail, price"
     requests_cloning = Requests::Cloning.select(select).where(:created_at => start_date.beginning_of_day..end_date.end_of_day)
-    generate_xlsx(requests_cloning, start_date, end_date, select)
+    XlsxGenerator.generate_xlsx(requests_cloning, start_date, end_date, select)
     send_file("#{Rails.root}/public/xlsx/pcr_clonings_requests.xlsx", filename: "clonings_#{Time.now().strftime('%Y%M%d%H%m')}.xlsx", type: "application/vnd.ms-excel")
   end
 
+=begin
   def generate_xlsx(requests, start_date, end_date, columns)
     package = Axlsx::Package.new
     workbook = package.workbook
@@ -159,6 +161,7 @@ class Requests::CloningsController < ApplicationController
 
     package.serialize("public/xlsx/pcr_clonings_requests.xlsx")
   end
+=end
 
 
   private
